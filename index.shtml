@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="EN"><head>
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Janet Davis | Whitman College</title>
+
+  
+  
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+</head><body>
+<!--#config timefmt="%B %d, %Y, %r %Z" -->
+<h1>Janet Davis</h1>
+
+<img style="float: right; padding-right: 1em; padding-bottom: 1em;" src="janetDavis.jpg" alt="Photo of Janet Davis by Penrose Library">
+<div>Professor and Microsoft Chair of <a href="https://www.whitman.edu/academics/departments-and-programs/computer-science">
+Computer
+Science</a><br>
+<a href="http://www.whitman.edu">Whitman College</a><br>
+Olin 118<br>
+509-527-5758<br>
+<a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a><br>
+<dl>
+  <dt>Office hours</dt>
+  See MyWhitman for my current office hours.
+<a href="http://meetme.so/JanetDavis">Use this online tool to make an appointment.</a><br/>
+See also <a href="calendar.html">my calendar</a>.</dd>
+</dl>
+<dl>
+  <dt>Blog</dt>
+  <dd><a href="http://blogs.whitman.edu/countingfromzero/">Counting
+from zero: Building a liberal arts CS program in the age of ubiquity</a></dd>
+  <dt>GitHub</dt>
+  <dd>I am <a href="https://github.com/ProfJanetDavis">ProfJanetDavis</a> 
+  and my research group is <a href="https://github.com/glam-lab">GLAMlab</a>. 
+  <dt>Social media</dt>
+  <dd>Whitman CS students and alumni are encouraged to <a href="https://www.linkedin.com/in/davisjan">connect with me</a> on <b>LinkedIn</b><br/>
+  and/or contact me about joining the Whitties in Tech organization on <b>Slack</b>.</dd>
+  <dd>On <b>Facebook</b>, I accept friend requests from alumni but not current students.<br/>
+I encourage you to join the group <a href="https://www.facebook.com/groups/1600362163581921/">CS@Whitman.</a> </dd>
+  <dd>Follow <a href="https://twitter.com/ProfJanetDavis">ProfJanetDavis</a> and <a href="https://twitter.com/cs_whitman">CS@Whitman</a> on <b>Twitter</b>.</dd>
+<a href="cv.pdf">Curriculum vitae [pdf]</a>
+</div>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Interests</h2>
+
+<h3>Scholarship</h3>
+
+My mission as a scholar: <span style="font-style: italic;">Nurture
+humanity in and through technology. Foster connections among people,
+disciplines, and ideas.</span><br>
+
+<p>My chief scholarly interests
+lie in the area of <a href="https://en.wikipedia.org/wiki/Human%3Fcomputer_interaction">human-computer
+interaction (HCI)</a>. I see this
+area as broadly addressing a scientific question and a design question:
+How do people interact with computers? And how can we design computer
+systems to enhance rather than detract from the human experience?
+My work as a computer scientist emphasizes the latter.</p>
+
+<p>I am particularly interested in <i>how</i> we do design. My
+dissertation research applied <a href="http://depts.washington.edu/vsdesign/">Value Sensitive Design</a>
+to <a href="http://www.urbansim.org">UrbanSim</a>,
+a large scale urban planning simulator, with an eye to transparency,
+fairness, and democracy to
+support the legitimacy of using UrbanSim as part of the political
+process.
+Much of my work has applied <a href="https://en.wikipedia.org/wiki/Participatory_design">participatory
+design</a>
+methods that engage future users in the processes and procedures of
+design, respecting equally the expertise of designers and participants.
+My current work investigates the design of <a href="https://en.wikipedia.org/wiki/Persuasive_technology">persuasive
+technology</a> to influence users' speech and writing.</p>
+<p>This past summer, I worked with Whitman students 
+Kalilou Ali Kadiri '22, Ahmed Elsayed '23, 
+Zoë Hill '21, Nidhi Jaltare '21, and Dylan Wu '21 
+to develop a Web interface for
+<a href="https://github.com/gender-bias/gender-bias">Reading for Gender Bias</a>, an API to provide feedback on possible gender bias in recommendation letters.
+See <A href="https://github.com/gender-bias/gender-bias-web">our work on GitHub</a>!
+</p>
+
+<h3>Teaching</h3>
+
+<p>My mission as a teacher: <span style="font-style: italic;">Create
+transformative experiences while fostering a supportive learning
+community.</span>
+</p>
+
+<p>My
+teaching interests span introductory computer science, computer
+systems, design, and the social influences and implications of
+computing and other technology.&nbsp; In my time at Grinnell, I taught
+Functional Problem Solving, Computer Organization
+&amp; Architecture, Operating Systems &amp; Parallel
+Algorithms, Computer Networks, Software Development,
+Human-Computer Interaction, Evolution of Technology, and two <a href="http://www.grinnell.edu/academic/catalog/academic-program/courses/tutorials">Tutorials</a>
+on technology and society.</p>
+
+
+<h3>Personal</h3>
+
+<p>My personal interests and pleasures include beadwork,
+knitting, sewing,
+and other crafts, walking, gardening, cooking,
+architecture, reading (especially YA fantasy, cozy mysteries, and light
+nonfiction), and collecting computer science jokes. Ask me about my daughter, my
+cat, the home my husband and I built in Walla Walla, or any of
+my other interests.<br>
+</p>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Education</h2>
+
+<ul>
+
+  <li>Ph.D. in <a href="http://www.cs.washington.edu">Computer
+Science &amp; Engineering</a>, <a href="http://www.washington.edu">University
+of Washington</a>, August 2006. Advisors:&nbsp;Alan
+Borning and&nbsp;Batya
+Friedman. Dissertation: Value Sensitive Design of
+interactions with UrbanSim indicators [<a href="pubs/davisjan-dissertation.pdf">PDF</a>].</li>
+  <li>M.S. in Computer Science &amp; Engineering, University
+of Washington, May 2001.</li>
+  <li>B.S. in <a href="http://www.cs.hmc.edu">Computer
+Science</a>, <a href="http://www.hmc.edu">Harvey
+Mudd College</a>, May 1999.</li>
+</ul>
+
+<hr style="width: 100%; height: 2px;">
+<ul>
+
+</ul>
+
+<h2>Selected Teaching Publications and Presentations<br>
+</h2>
+<ul>
+
+<li><b>Janet Davis</b>, Andrea Tartaro, and Tammy VanDeGrift. <a href="https://dl.acm.org/doi/10.1145/3408877.3432512">Demystifying the Tenure-Track Faculty Search in Computer Science at Primarily Undergraduate Institutions: A Handbook of Advice for Job Seekers</a>. In <i>Proceedings of the 52nd ACM Technical Symposium on Computer Science Education (SIGCSE '21)</i>.
+</li>
+
+<li><span style="font-weight: bold;">Janet Davis</span>. <a href="https://www.chronicle.com/article/5-Ways-to-Welcome-Women-to/247541">5 Ways to Welcome Women to Computer Science</a>. 
+<i>The Chronicle of Higher Education</i>, November 18, 2019.</li>
+
+  <li><span style="font-weight: bold;">Janet Davis</span> and Samuel A. Rebelsky. <a href="https://dl.acm.org/authorize?N686485">Developing Soft and Technical Skills Through Multi-Semester, Remotely Mentored, Community-Service Projects</a>. In <span style="font-style: italic;">Proceedings of the 50th ACM Technical Symposium on Computer Science Education</span>, March 2019.<br>
+</li>
+  <li><b>Janet Davis</b> and Christine Alvarado. 2017. <a href="http://dl.acm.org/authorize?N45604">Supporting undergraduates to
+make the most of conferences</a>. <i>ACM Inroads</i> 8, 3 (September
+2017), 32-35.</li>
+
+  <li><span style="font-weight: bold;">Janet Davis</span>. 2017. <a href="http://dl.acm.org/authorize?N39116">Liberal arts academia wants
+YOU!</a> <i>Communications of the ACM</i>&nbsp; 60, 2 (February 2017), 12-13.<br>
+    <span style="font-weight: bold;"></span></li>
+  <li><span style="font-weight: bold;">Janet Davis</span>, Jeannie
+Albrecht, Christine Alvarado, Tzu-Yi Chen, Amy Csizmar Dalal, and Sohie
+Lee. 2015. <a href="http://dl.acm.org/authorize?N99112">Computer
+science faculty careers at liberal arts colleges.</a> XRDS 21, 3 (March
+2015), 13-15.<br>
+  </li>
+  <li><b>Janet Davis</b>, Jeannie Albrecht, Christine Alvarado, Tzu-Yi
+Chen, and Sohie Lee. Faculty careers at liberal arts colleges: Myths
+and
+reality. Panel presented at the <i>Grace Hopper Celebration of
+Women in Computing (GHC 2013)</i>, Minneapolis, October 2-5, 2013. <a href="pubs/liberal-arts-myths-realities.pdf">[proposal]</a></li>
+  <li>Samuel A. Rebelsky, <span style="font-weight: bold;">Janet Davis</span>,
+and Jerod Weinman. <a href="http://dl.acm.org/authorize?N03110">Building
+knowledge and confidence with mediascripting: A successful
+interdisciplinary approach to CS1</a>. In <span style="font-style: italic;">Proceedings of the 44th ACM
+Technical Symposium on Computer Science Education</span>, March 2013.<br>
+  </li>
+  <li>Chase Felker*, Radka Slamova*, and <span style="font-weight: bold;">Janet Davis</span>. <a href="http://dl.acm.org/authorize?69628">Integrating UX with Scrum
+in an Undergraduate Software Development Project.</a> In <span style="font-style: italic;">Proceedings of the 43rd ACM
+Technical Symposium on Computer Science Education</span>, March 2012.<br>
+    <span style="font-weight: bold;"></span></li>
+  <li><span style="font-weight: bold;">Janet Davis</span> and Henry
+Walker. <a href="http://dl.acm.org/authorize?75829">Incorporating
+Social Issues of Computing in a Small, Liberal Arts College: A Case
+Study</a>. In <span style="font-style: italic;">Proceedings of the 42nd ACM Technical Symposium on Computer Science Education</span>,
+March 2011.<span style="font-style: normal;"><span style=""></span></span></li>
+  <li><span style="font-style: normal;"><span style="">Samuel
+Mann, Logan Muller, </span></span><span style="font-style: normal;"><span style="font-weight: bold;">Janet
+Davis</span>,</span><span style="font-style: normal;"><span style="">
+Claudia Roda, and Alison Young. <a href="http://dl.acm.org/authorize?75828">Computing and
+Sustainability:
+Evaluating Resources for Educators</a>. </span></span><i><span style="">ACM
+SIGCSE Bulletin</span></i><span style="font-style: normal;"><span style=""> 41(4):144-155, January 2010.</span></span></li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. <a href="http://dl.acm.org/authorize?75826">Experiences with
+Just-in-Time Teaching in Systems and Design Courses</a>. In <span style="font-style: italic;">Proceedings of the SIGCSE 2009 Annual
+Technical Symposium on Computer Science Education</span>, March
+2009.&nbsp;<a href="pubs/jitt-talk-sigcse2009.pdf">[slides]</a></li>
+  <li><span style="font-weight: bold;">Janet Davis</span> and Samuel A.
+Rebelsky. <a href="http://dl.acm.org/authorize?75827">Food-first CS:
+Starting the First Course Right with PB&amp;J</a>. SIGCSE 2007.</li>
+  <li><span style="font-weight: bold;">Janet Davis</span> and Tammy
+VanDeGrift. <a href="pubs/1170_THE_JOURNEY_TO_A_TEACHING_ORIENTED_FACUL.pdf">The
+Journey to a Teaching-Oriented Faculty Career: A Handbook of Advice for
+Graduate Students</a>. &nbsp;In <span style="font-style: italic;">Proceedings
+of the 2006 ASEE Annual Conference and Exposition</span>, June 2006.</li>
+</ul>
+
+<h2>Selected Research Publications and Presentations<br>
+</h2>
+
+<ul>
+
+  <li><b>Janet Davis</b> and Buyaki Nyatichi*. Values and Politics of a Behavior Change Support System. 
+ <i><a href="https://dialnet.unirioja.es/servlet/libro?codigo=769585">Societal Challenges in the
+Smart Society (ETHICOMP 2020)</a></i>, ed. Mario Arias-Oliva, Jorge Pelegrin-Borondo, Kiyoshi Murata, and Ana Maria
+Lara Palma, pp. 299-313. 
+
+  <li>Emma Twersky* and <span style="font-weight: bold;">Janet Davis</span>.
+    <a href="pubs/Persuasive2017_031_final.pdf">"Don't say that!" An
+analysis of persuasive systems in the wild.</a>
+In de Vries, P.W., Oinas-Kukkonen, H., Siemons, L., Beerlage-de Jong,
+N., van Gemert-Pijnen, L. (Eds.), Proceedings of the 12th International
+Conference on Persuasive Technology (PERSUASIVE 2017), Amsterdam, The
+Netherlands, April 4-6, 2017. Springer, LNCS 10171, pages 215-226.<br>
+    <span style="font-weight: bold;"></span></li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. <a href="https://openlab.ncl.ac.uk/sustainabilitypatternsworkshop/wp-content/uploads/2016/04/SHCIDesignPatterns2016_Davis.pdf">Reframing
+Persuasive Technology for Sustainability</a>. Presented at the workshop
+on &#8220;Design patterns, principles, and strategies for Sustainable HCI&#8221; at
+the <span style="font-style: italic;">ACM Conference on Human Factors
+in Computer Systems (CHI 2016)</span>, San Jose, CA, May 7-8, 2016.<br>
+  </li>
+  <li>Bran Knowles and <span style="font-weight: bold;">Janet Davis</span>.
+    <a href="http://iwc.oxfordjournals.org/content/early/2016/04/08/iwc.iww005.abstract">Is
+Sustainability a Special Case for Persuasion?</a> <span style="font-style: italic;">Interacting with Computers</span>,
+February 2016.<br>
+  </li>
+  <li><span style="font-weight: bold;">Janet Davis</span> and Lisa P.
+Nathan. <a href="http://link.springer.com/referenceworkentry/10.1007/978-94-007-6970-0_3">Value
+Sensitive Design: Applications, Adaptations, and Critiques.</a>
+I. van de Poel, P. Vermaas, &amp; J. van den Hoven (Eds.), Ethics and
+Values in Technological Design, Springer Reference Works, January 2015.
+[<a href="https://docs.google.com/document/d/1ZL0IqLm2k4Xgxy_VGlHqFoGJzpXZtMID62soxepoQg8/edit?usp=sharing">manuscript</a>]<br>
+  </li>
+  <li> Nediyana Daskalova**, Nathalie Ford**, Ann Hu**, Kyle
+Moorehead**,
+Benjamin Wagnon**, and <b>Janet Davis</b> (2014). "Informing Design of
+Suggestion and Self-Monitoring Tools through Participatory Experience
+Prototypes." In Anna Spagnolli, Luca Chittaro, Luciano Gamberini (Ed.)
+The 9th International Conference on Persuasive Technology (PERSUASIVE
+2014), 8462, Springer, 68-79. <a href="pubs/persuasive2014.pdf">[local
+PDF]</a><br>
+  </li>
+  <li><b>Janet Davis</b>. Early Experiences with Participation in
+Persuasive Technology Design. In <i>Proceedings of the 12th
+Participatory Design Conference: Research Papers - Volume 1 (PDC 2012)</i>,
+Roskilde, Denmark, August 12-16, 2012. <a href="pubs/davis-pdc2012.pdf">[local
+PDF]</a><br>
+  </li>
+  <li>Scott Kaitz** and <span style="font-weight: bold;">Janet Davis</span>.
+Facebook Support Groups<strong>: </strong>Toward Understanding Member
+Usage. Presented at the <span style="font-style: italic;">Sixth
+International Conference on Persuasive Technology (PERSUASIVE 2011)</span>,
+Columbus, OH, June 2-5, 2011.<span style="font-weight: bold;"></span></li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. Generating
+Directions for Persuasive Technology Design with the Inspiration Card
+Workshop. In <span style="font-style: italic;">Proceedings of the
+Fifth International Conference on Persuasive Technology (PERSUASIVE
+2010),</span> Thomas Ploug, Per Hasle, Harri Oinas-Kukkonen (Eds.),
+LNCS, vol. 6137, pp. 262-273, Copenhagen, Denmark, June 7-10,
+2010.&nbsp;<a href="pubs/davis-persuasive2010.pdf">[local PDF]</a>&nbsp;<a href="pubs/davis-persuasive2010-slides.ppt">[slides]</a>&nbsp;The
+original publication is available at <a href="http://www.springerlink.com">http://www.springerlink.com</a>.</li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. <a href="pubs/davis-persuasive2009.pdf">Design Methods for Ethical
+Persuasive Technology</a>. In <span style="font-style: italic;">Proceedings
+of the Fourth International Conference on Persuasive Technology</span> <span style="font-style: italic;">(PERSUASIVE 2009)</span>, Claremont, CA,
+April 28-30, 2009.</li>
+  <li>Timothy M. Miller**, Patrick Rich**, and <span style="font-weight: bold;">Janet Davis</span>. <a href="http://doi.acm.org/10.1145/1520340.1520634">ADAPT: Audience
+Design of Ambient Persuasive Technology</a>. In <span class="mediumb-text">Extended Abstracts</span><span class="mediumb-text"> of the 27th International Conference&nbsp;on
+Human Factors in Computing Systems (CHI 2009), Boston, MA, April 2009.</span></li>
+  <li>Batya Friedman, Alan Borning, <span style="font-weight: bold;">Janet
+Davis</span>, Brian Gill, Peter Kahn, Travis Kriplean, and Peyina Lin. <a href="http://www.urbansim.org/papers/friedman-dgo2008-foundations.pdf">Laying
+the Foundations for Public Participation and Value Advocacy:
+Interaction Design for a Large Scale Urban Simulation</a>. <em>Proceedings
+of the 9th Annual International Conference on Digital Government
+Research</em>, Montréal, Canada, May 2008.</li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. <a href="http://projects.ischool.washington.edu/vsd/publications/pdf/davis_hicss2008.pdf">Engaging
+and informing citizens with household indicators</a>. In <i>Proceedings
+of the Hawai'i International Conference on System Sciences (HICSS-41)</i>,
+January 2008, Waikoloa, Hawaii.</li>
+  <li><span style="font-weight: bold;">Janet Davis</span>, Peyina Lin,
+Alan Borning, Batya Friedman,
+Peter H. Kahn, Jr., and Paul Waddell, <a href="http://projects.ischool.washington.edu/vsd/publications/pdf/davis_urbansim_2006.pdf">Simulations
+for Urban Planning:
+Design for Human Values</a>. <span style="font-style: italic;">IEEE
+Computer </span>39(9): 66-72, September 2006.</li>
+  <li><span style="font-weight: bold;">Janet Davis</span>. <a href="http://www.urbansim.org/papers/davis-chi2006wip.pdf">Household
+Indicators:
+Design to Inform and Engage Citizens</a>. <em>ACM CHI 2006 Extended
+Abstracts</em>, April 2006.</li>
+  <li> Alan Borning, Batya Friedman, <span style="font-weight: bold;">Janet
+Davis</span>, and Peyina Lin. <a href="http://www.urbansim.org/papers/borning-ecscw2005.pdf">Informing
+Public Deliberation: Value Sensitive Design of Indicators for a
+Large-Scale Urban Simulation</a>.&nbsp; Proceedings of the <i>9th
+European Conference on Computer-Supported Cooperative Work</i>,
+Paris, September 2005. </li>
+  <li>A.J. Brush, Morgan Ames, and <span style="font-weight: bold;">Janet
+Davis</span>. <a href="http://doi.acm.org/10.1145/985921.986018">A
+Comparison
+of Synchronous Remote and Local Usability Studies for an Expert
+Interface.</a> In <i><a href="http://www.chi2004.org">Extended
+Abstracts of CHI 2004, ACM Conference on Human Factors in Computing
+Systems</a></i>, pages 1179-1182. ACM Press, April 2004. </li>
+  <li> Robert Grimm,<span style="font-weight: bold;"> Janet Davis</span>,
+Eric Lemar, Adam MacBeth,
+Steven Swanson, Thomas Anderson, Brian Bershad, Gaetano Borriello,
+Steven Gribble, and David Wetherall. <a href="http://www.cs.nyu.edu/rgrimm/one.world/papers/tocs04.pdf">System
+support for pervasive applications</a> (PDF, 1,777 KB). <i>ACM
+Transactions on Computer Systems</i>, 22(4):421-486, November
+2004. </li>
+  <li><span style="font-weight: bold;"> Janet Davis</span>. <a href="http://www.cs.nyu.edu/rgrimm/one.world/papers/rep01.pdf">REP:
+A communication mechanism for pervasive computing</a> (PDF, 218
+KB). Technical report, May 2001. </li>
+  <li>B. Barden, <span style="font-weight: bold;">J. Davis</span>, R.
+Libeskind-Hadas, and W. Williams. <a href="http://dx.doi.org/10.1016/S0020-0190%2899%2900033-2">On
+Edge-Disjoint Spanning Trees in Hypercubes</a>. <em>Information
+Processing
+Letters</em>, 70(1):13-16, April 16, 1999.</li>
+</ul>
+
+* Co-authors are Whitman students or alumni.&nbsp;
+<br>
+
+** Co-authors are Grinnell students or alumni.<span style="font-weight: bold;"></span>
+<hr style="width: 100%; height: 2px;">Janet Davis (<a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>)<br>
+
+<p style="font-style: italic;">
+Created August 7, 2015<br>
+Last modified&nbsp;<!--#echo var="LAST_MODIFIED" --> <br>
+</p>
+
+</body></html>

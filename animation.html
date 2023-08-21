@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: gray;
+}
+#sprite {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+}
+</style>
+<body>
+
+<p><button id="button" onclick="animate()">Animate</button></p> 
+
+<div id ="container">
+  <div id ="sprite"></div>
+</div>
+
+<script>
+animate = (function() {
+  var pos=0, inc=1;
+  return function() {
+    var elem = document.getElementById("sprite");   
+    var button = document.getElementById("button");
+
+    var id = setInterval(frame, 5);
+    button.innerHTML = "Stop";
+    button.onclick = function() { 
+      clearInterval(id); 
+      button.innerHTML = "Animate";
+      button.onclick = function() { animate(); };
+    };
+    function frame() {
+      if ((pos >= 350) || (pos < 0)) {
+        inc = -inc;
+      }
+      pos += inc; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    };
+  };
+})();
+</script>
+
+</body>
+</html>
