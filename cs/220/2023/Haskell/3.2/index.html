@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:53140/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace-tomorrow-night-eighties">.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-tomorrow-night-eighties */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3.2: Hello world!</title>
+    <!-- external resources (editor, zip)-->
+    <script src="./index_files/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./index_files/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./index_files/jszip.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- non-ui playback -->
+    <script src="./index_files/EditorState.js"></script>
+    <script src="./index_files/CodeDownloader.js"></script>
+    <script src="./index_files/NewCodeFileMarker.js"></script>
+    <script src="./index_files/NewCodeMarkerGenerator.js"></script>
+    <script src="./index_files/PlaybackEngine.js"></script>
+    <script src="./index_files/ServerProxy.js"></script>
+    <!-- playback ui -->
+    <script src="./index_files/AceEditor.js"></script>
+    <script src="./index_files/AddEditComment.js"></script>
+    <script src="./index_files/App.js"></script>
+    <script src="./index_files/AudioVideoRecorder.js"></script>
+    <script src="./index_files/BlogCodeSnippet.js"></script>
+    <script src="./index_files/BlogComponent.js"></script>
+    <script src="./index_files/BlogView.js"></script>
+    <script src="./index_files/CodeView.js"></script>
+    <script src="./index_files/CommentGroup.js"></script>
+    <script src="./index_files/CommentNavigator.js"></script>
+    <script src="./index_files/CommentTags.js"></script>
+    <script src="./index_files/CommentView.js"></script>
+    <script src="./index_files/CreateMultipleChoiceQuestion.js"></script>
+    <script src="./index_files/DevAvatar.js"></script>
+    <script src="./index_files/DevGroupAvatar.js"></script>
+    <script src="./index_files/EditorFileTabs.js"></script>
+    <script src="./index_files/EditorView.js"></script>
+    <script src="./index_files/FileSystemNavigator.js"></script>
+    <script src="./index_files/ImageGallery.js"></script>
+    <script src="./index_files/MultiLineTextInput.js"></script>
+    <script src="./index_files/OptionsMenu.js"></script>
+    <script src="./index_files/PlaybackControls.js"></script>
+    <script src="./index_files/PlaybackNavigator.js"></script>
+    <script src="./index_files/PlaybackSlider.js"></script>
+    <script src="./index_files/QuestionAnswerView.js"></script>
+    <script src="./index_files/SearchBar.js"></script>
+    <script src="./index_files/ShowHideComponent.js"></script>
+    <script src="./index_files/SurroundingLinesSelector.js"></script>
+    <script src="./index_files/TagView.js"></script>
+    <script src="./index_files/TitleBar.js"></script>
+    <script src="./index_files/VerticalMediaContainer.js"></script>
+    <!-- playback data -->
+    <script src="./index_files/loadPlayback.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        background-color: rgb(41, 41, 41);
+        color: lightgray;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  <script src="./index_files/theme-tomorrow_night_eighties.js"></script><script src="./index_files/mode-haskell.js"></script></head>
+  <body>
+    <script>
+      //create an alias for an Ace type
+      const AceRange = ace.require('ace/range').Range;
+
+      //get the playback data and pass it to the app
+      const playbackData = {};
+      loadPlaybackData(playbackData);
+
+      //look to see if there is a mode in the querystring
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const mode = urlSearchParams.get('mode');
+
+      //check if this is a small screen or an explicit request for blog mode
+      let initialMode = 'code';
+      if(window.innerWidth < 800 || (mode && mode === 'blog')) {
+        initialMode = 'blog';
+      } 
+      const app = new App(playbackData, initialMode);
+      document.body.appendChild(app);
+    </script><st-app><template shadowrootmode="open">
+      <style>
+        :host {
+          display: flex;
+          flex-flow: column;
+          height: 100%;
+        }
+        .playbackContent {
+          flex: 1 1 auto;
+          overflow: hidden;
+        }
+      </style>
+
+      <div class="titleBar"><st-title-bar><template shadowrootmode="open">
+    <style>
+      :host {
+        background-color: rgb(59,76,98);
+        color: rgb(223, 242, 244);
+        padding: 2px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .modeButton {
+        padding: 0px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        color: gray;
+        display: none;
+        cursor: pointer;
+      }
+
+      .activeModeButton {
+        color:rgb(201, 226, 242);
+        display: block;
+      }
+
+      .playbackTitle {
+        color:rgb(201, 226, 242);
+        font-size: 1.25rem;
+      }
+
+      .stLogo {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+
+      .optionsButtonsGroup{
+        display: flex;
+      }
+
+      #editButton, #doneEditButton {
+        opacity: 80%;
+        cursor: pointer;
+      }
+      #editButton:hover, #doneEditButton:hover {
+        opacity: 100%;
+      }
+      #readTime {
+        font-size: .8em;
+        color: gray;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <!-- Logo and playback title -->
+    <div class="logoTitleCombo">
+      <span class="stLogo">Storyteller: </span>
+      <span class="playbackTitle" title="Estimated read time is about 2 minutes.">Example 3.2: Hello world!</span>
+      <span id="editButton" class="" title="Edit the title of the playback">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+        </svg>
+      </span>
+      <span id="doneEditButton" class="hidden" title="Done editing the title of the playback">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"></path>
+        </svg>
+      </span>
+      <span id="readTime" class="hidden">Estimated read time is about 2 minutes</span>
+    </div>
+
+    <!-- search bar, code/blog mode buttons and options button -->
+    <div class="optionsButtonsGroup" role="group" aria-label="Options Button Group">
+      <st-search-bar><template shadowrootmode="open">
+      <style>
+      .searchControls {
+        display: flex;
+        padding: 3px;
+        justify-content: flex-end;
+        align-items: baseline;
+      }
+      .searchInput {
+        color: lightgray;
+        border:none;
+        background-color: inherit;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: 7px 7px; 
+        padding: 7px 15px 7px 30px;
+        flex: 1;
+        border-radius: 30px;
+        width: 90px;
+        transition: width 1s;
+      }
+
+      .searchInput.expanded {
+        width: 300px;
+      }
+      .searchInput:focus {
+        outline: none;
+      }
+
+      #clearSearchResults {
+        color: gray;
+        padding-right: 5px;
+        font-size: smaller;
+        font-weight: bold;
+      }
+
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+      .resetSearchButton {
+        opacity 1;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: gray;
+        position: relative;
+        right: 3px;
+      }
+
+      .resetSearchButton.hidden {
+        opacity: 0;
+        cursor: text;
+      }
+
+      .searchForm {
+        border : 2px solid gray;
+        border-radius: 45px;
+      }        
+      </style>
+        
+      <div class="searchControls">
+        <div id="clearSearchResults"></div>
+        <div class="searchForm">
+          <input type="search" id="searchBar" class="searchInput" placeholder="Search" autocomplete="off" spellcheck="false">
+          <button class="resetSearchButton hidden" type="reset" title="Clear search results">✕</button>
+        </div>
+      </div>
+    </template></st-search-bar>
+
+      <button id="enterCodeModeButton" type="button" class="modeButton" title="Code View">
+        <!-- icon url: https://icons.getbootstrap.com/icons/file-code/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-code" viewBox="0 0 16 16">
+          <path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"></path>
+          <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+        </svg>
+      </button>
+
+      <button id="enterBlogModeButton" type="button" class="modeButton activeModeButton" title="Blog View">
+        <!-- icon url: https://icons.getbootstrap.com/icons/file-richtext/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-richtext" viewBox="0 0 16 16">
+          <path d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>
+          <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+        </svg>
+      </button>      
+    </div></template></st-title-bar></div>
+      <div class="playbackContent"><st-code-view><template shadowrootmode="open">
+      <style>
+        :host {
+          display: flex;
+          height: 100%;
+        }
+
+        .commentsSlot {
+          flex: 0 0 auto;
+          overflow-y: scroll;
+          scrollbar-width: none;
+        }
+        .commentsSlot::-webkit-scrollbar {
+          display: none;
+        }
+
+        .editorViewSlot {
+          flex: 0 0 auto;
+          padding: 1px 5px 0px 0px;
+        }
+
+        .dragBar {
+          display: flex;
+          align-items: center;
+          cursor: col-resize;
+          background-color: rgb(58,58,58);
+        }
+      </style>
+
+      <div class="commentsSlot" style="width: 382.8px;"><st-playback-navigator><template shadowrootmode="open">
+      <style>
+        :host {
+          height: 100%;
+          display: block;
+        }
+
+        .tab {
+          display: flex;
+          justify-content: space-between;
+          overflow-y: hidden;
+          overflow-x: scroll;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          border-bottom: 1px solid gray;
+        }
+        .tab::-webkit-scrollbar {
+          display: none;
+        }
+
+        .tabLink {
+          background-color: inherit;
+          font-size: inherit;
+          color: inherit;
+          border: 1px solid transparent;
+          cursor: pointer;
+          padding: 8px 10px;
+          border-top-left-radius: .25rem;
+          border-top-right-radius: .25rem;
+        }
+
+        .tabLink:hover {
+          border: 1px solid gray;
+          border-bottom: 1px solid transparent;
+        }
+
+        .tabLink.activeTab {
+          background-color: rgb(31,31,31);
+          border: 1px solid gray;
+          border-bottom: none;
+        }
+
+        .subNavigatorsTab {
+          height: calc(100% - 40px);
+          word-wrap: break-word;
+        }
+
+        .inactive {
+          display: none;
+        }
+      </style>
+      
+      <div class="tab">
+        <span>
+          <button class="tabLink comments activeTab">Comments</button>
+          <button class="tabLink fileSystem">File&nbsp;System</button>
+        </span>
+        <st-options-menu><template shadowrootmode="open">
+      <style>
+        #modal-Opener
+        {
+          background: transparent;
+          border: none;
+          color: gray;
+          cursor: pointer;
+          padding: 9px 4px 0px 0px;
+        }
+
+        .disabled {
+          opacity: .2;
+        }
+
+        .btn
+        {
+          border: 1px solid lightgray;
+          color: lightgray;
+          background-color: inherit;
+          cursor: pointer;
+          font-weight: bold;
+          height: 35px;
+          width: 45%;
+          opacity: .8;
+          border-radius: 5px;
+        }
+        .btn:hover
+        {
+          opacity: 1;
+        }
+        .buttonCommand
+        {
+          margin-left: 100px;
+        }
+        .buttonGroup
+        {
+          display: flex;
+        }
+        .close
+        {
+          background: transparent;
+          border: none;
+          color: #aaa;
+          cursor: pointer;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          padding-top: 5px;
+        }
+        .command
+        {
+          margin-left: 100px;
+        }
+        .commandAction
+        {
+          font-weight: bold;
+          width: 40%;
+        }
+        .commandList
+        {
+          display: flex;
+          padding: 10px;
+        }
+        .modal
+        {
+          display: none;
+          left: 50%;
+          position: fixed;
+          top: 10%;
+          width: 30%;
+          z-index: 100;
+        }
+        .modal.visible {
+          display: inline-block;
+        }
+
+        .modal-body
+        {
+          background-color: rgb(31,31,31);
+          padding: 16px 16px 16px 16px;
+        }
+        .modal-content
+        {
+          animation-duration: 0.4s;
+          animation-name: animatetop;
+          background-color: #fefefe;
+          border: 1px solid #888;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          margin: auto;
+          padding: 0;
+          position: relative;
+          width: 80%;
+          z-index: 100;
+        }
+        .modal-header
+        {
+          background-color: rgb(51,51,51);
+          border-bottom: 1px solid #dee2e6;
+          color: lightgrey;
+          font-size: 1.25rem;
+          padding: 1rem 1rem;
+        }
+        .modal-title
+        {
+          font-size: 1.1em;
+          margin: 0;
+          padding: 1px 0px;
+        }
+        .optionsGroup
+        {
+          display: grid;
+          padding: 5px;
+        }
+        .optionsMenu
+        {
+          display: none;
+        }
+        .optionsMenu.active
+        {
+          display: block;
+        }
+        .tab
+        {
+          border-bottom: 1px solid gray;
+          display: flex;
+          ms-overflow-style: none;
+          overflow-x: scroll;
+          overflow-y: hidden;
+          scrollbar-width: none;
+        }
+        .tab::-webkit-scrollbar
+        {
+          display: none;
+        }
+        .tabLink
+        {
+          background-color: inherit;
+          border: none;
+          border-top-left-radius: .25rem;
+          border-top-right-radius: .25rem;
+          color: inherit;
+          cursor: pointer;
+          font-size: inherit;
+          padding: 8px 10px;
+        }
+        .tabLink.activeTab
+        {
+          background-color: rgb(31,31,31);
+          border: 1px solid gray;
+          border-bottom: none;
+        }
+        .tabLink:hover:not(.activeTab)
+        {
+          opacity: .7;
+        }
+      </style>
+    
+      <button id="modal-Opener" title="Options Menu">
+        <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-gear-wide" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 0 0-9.995 4.998 4.998 0 0 0 0 9.996z"></path>
+        </svg>
+      </button>
+      <div class="modal">
+        <div class="modal-header">
+          <button type="button" id="optionsCloseButton" class="close">
+            <span aria-hidden="true">×</span>
+          </button>
+          <div class="modal-title">Playback Options</div>
+        </div>
+        <div class="modal-body">
+          <div class="tab">
+            <button class="tabLink options activeTab" data-tabclicked="Options">Options</button>
+            <button class="tabLink controls" data-tabclicked="Shortcuts">Keyboard Shortcuts</button>
+          </div>
+          <div class="subNavigatorsTab">
+            <div class="optionsMenu active" id="Options">
+              <div class="optionsGroup">Change code window text size
+                <div class="btn-group buttonGroup">
+                  <button id="textSmallerButton" class="btn">Smaller</button>
+                  <button id="textBiggerButton" class="btn">Bigger</button>
+                </div>
+              </div>
+              <div class="optionsGroup">Change playback speed
+                <div class="btn-group buttonGroup">
+                  <button id="playbackSpeedDown" class="btn">Slower</button>
+                  <button id="playbackSpeedUp" class="btn">Faster</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="optionsMenu" id="Shortcuts">
+            <div class="commandList">
+              <div class="commandAction"> Move playback one character</div>  
+              <div class="command">left/right arrow</div>  
+            </div>
+            <div class="commandList">
+              <div class="commandAction">Move playback one comment</div>  
+              <div class="command">shift + left/right arrow </div>
+            </div>
+            <div class="commandList">
+              <div class="commandAction">Move to the beginning/end of a playback</div>  
+              <div class="command">ctrl + shift + left/right arrow </div>
+            </div>
+            <div class="commandList">
+              <div class="commandAction">Toggle play/pause of the playback</div>  
+              <div class="command">spacebar</div>
+            </div>
+            <div class="commandList">
+              <div class="commandAction">Increase/decrease text editor font size</div>  
+              <div class="command">ctrl + shift + up/down arrow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </template></st-options-menu>
+      </div>
+      <div class="subNavigatorsTab"><st-comment-navigator><template shadowrootmode="open">
+      <style>
+        .commentGroups {
+          height: 100%;
+          overflow-y: auto;
+          word-wrap: break-word;
+          scrollbar-width: thin;
+        }
+        .commentGroups::-webkit-scrollbar {
+          width: .65em;
+          background-color: inherit;
+        }
+        .commentGroups::-webkit-scrollbar-thumb {
+          background: dimgray;
+        }
+
+        #newCommentButton {
+          position: sticky;
+          bottom: 0;
+          left: 0;
+
+          cursor: pointer;
+          background-color: gray;
+          color: black;
+          border: none;
+          font-weight: bold;
+          opacity: .85;
+          height: 40px;
+          width: 100%;
+          padding: 5px;
+        }
+        #newCommentButton:hover {
+          opacity: 1;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+      </style>
+      <div class="commentGroups"><st-comment-group id="commentId-0" class="commentId-0 activeCommentGroup"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-0" class="activeGroup activeComment"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="titleBar">Example 3.2: Hello world!</div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">Our first example is done for us! When we create a new Repl with the Haskell template, the default code is the <a href="http://helloworldcollection.de/">canonical example program for any language</a>.<br><div><br></div><div>Run the default program and verify it does indeed print, "Hello, world!"</div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group><st-comment-group id="commentId-1" class="commentId-1"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-1"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="commentBar"><div class="commentDevelopersDiv"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div></div>
+          <div>
+            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">1/5</div></div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">But how does it work? Let's rebuild this example from scratch.<div><br></div><div>As in Python, Java, or C++, <span style="font-family: Courier;">"Hello, World!"</span> is a string.&nbsp; What happens if we try to run a program containing only that string?<br><br></div><div><div><span style="font-family: Courier;">Main.hs:1:1: error:&nbsp;<br></span><span style="font-family: Courier;">Parse error: module header, import declaration&nbsp;</span><span style="font-family: Courier;">or top-level declaration expected.</span></div></div><div><br></div><div>Hmm, there was something that looked like a module header in the original program. Let's try adding that back.<br></div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group><st-comment-group id="commentId-2" class="commentId-2"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-2"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="commentBar"><div class="commentDevelopersDiv"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div></div>
+          <div>
+            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">2/5</div></div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">No, we still get the same parse error.&nbsp;<div><br></div><div>Hmm, <span style="font-family: Courier;">putStrLn</span> sounds awfully similar to <span style="font-family: Courier;">println</span>. Let's try putting that back.</div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group><st-comment-group id="commentId-3" class="commentId-3"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-3"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="commentBar"><div class="commentDevelopersDiv"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div></div>
+          <div>
+            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">3/5</div></div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">Still the same error!&nbsp;<div><br></div><div><div><span style="font-family: Courier;">Main.hs:1:1: error:</span></div><div><span style="font-family: Courier;">&nbsp; &nbsp; Parse error: module header, import declaration or top-level declaration expected.</span></div></div><div><br></div><div>What could be missing?&nbsp;</div><div><br></div><div>Hmm... The original program seemed to define a variable named <span style="font-family: Courier;">main</span>. That sounds kind of like a "top-level declaration." So let's try adding a declaration of main.</div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group><st-comment-group id="commentId-4" class="commentId-4"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-4"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="commentBar"><div class="commentDevelopersDiv"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div></div>
+          <div>
+            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">4/5</div></div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">And now, once again, we have a working program that prints, "Hello, world!"<div><br></div><div>We already see two key differences between Haskell and imperative programming languages such as Python, Java, and C++.</div><div><br></div><div>1. A Haskell program is not a sequence of statements; it is a collection of declarations. Think of these declarations as similar to algebraic equations. As we will see later, the order of these declarations does not matter.</div><div><br></div><div>2. The name <span style="font-family: Courier;">main</span> does not refer to a variable; it refers to a function with no parameters.&nbsp;</div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group><st-comment-group id="commentId-6" class="commentId-6"><template shadowrootmode="open">
+      <style>
+        :host {
+          margin: 6px 0px;
+          padding: 2px 2px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        :host(.activeCommentGroup) .commentViews {
+          background-color: rgb(63, 63, 63);
+          border: 3px gray solid;  
+          border-radius: .2rem;
+          padding: 0px 0px;
+        }
+
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        #editCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-list-ol' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z'/><path d='M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #editCommentGroupButton:hover {
+          opacity: 100%;
+        }
+
+        #doneEditingCommentGroupButton {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='lightgray' class='bi bi-check-square' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/><path d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z'/></svg>");
+          background-repeat: no-repeat;
+          height: 2em;
+          width: 2em;
+          border: none;    
+          margin: 0px 15px;
+          background-color: transparent;
+          opacity: 70%;
+          float: right;
+          cursor: pointer;
+        }
+        #doneEditingCommentGroupButton:hover {
+          opacity: 100%;
+        }
+      </style>
+
+      <div class="commentViews"><st-comment-view id="commentId-6"><template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          border: 1px gray solid;
+          padding: 3px 12px;
+          background-color: rgb(51, 51, 51);
+        }
+        :host(.activeGroup) {
+          background-color: rgb(60, 60, 60);
+        }
+        :host(.activeComment) {
+          background-color: rgb(59,76,98);
+        }
+        :host(.nonRelevantSearchResult) {
+          display: none;
+        }
+
+        #editCommentButton {
+          opacity: 80%;
+          visibility: hidden;
+          content: "";
+          background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' class='bi bi-pencil-square test' fill='lightgray' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/><path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z' clip-rule='evenodd'/></svg>");
+          background-repeat: no-repeat;
+          background-color: transparent;
+          height: 1.6em;
+          width: 1.6em;
+          border: none;
+          cursor: pointer;
+        }
+        #editCommentButton:hover {
+          opacity: 100%;
+        }
+        :host(.activeComment) #editCommentButton:not(.inactive) {
+          visibility: initial;
+        }
+
+        a {
+          color: lightblue;
+        }
+        a:visited {
+          color: lightblue;
+        }
+        a:hover {
+          opacity: 80%;
+        }
+        .commentTopBar {
+          border-bottom: 1px solid rgb(83, 84, 86);
+          margin-bottom: 8px;
+          overflow-y: auto;
+        }
+
+        .commentCount {
+          font-size: .95em;
+          display: inline;
+          color: rgb(127, 138, 148);
+        }
+
+        .commentText {
+          padding: 2px 5px 12px 5px;
+        }
+
+        .commentTitle {
+          padding: 5px;
+          font-size: 1.3em;
+        }
+
+        .commentAvatar {
+          display: inline;
+        }
+
+        .titleBar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.35em;
+          padding: 8px 0px;
+        }
+
+        .commentBar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .commentVideo, .commentAudio {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .searchHighlight {
+          background-color: #517EB0;
+        }
+      </style>
+      <div>
+        <div class="commentTopBar"><div class="commentBar"><div class="commentDevelopersDiv"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div></div>
+          <div>
+            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">5/5</div></div></div>
+        <div class="commentTitle"></div>
+        <div class="commentText">Finally, note that we do not really need to explicitly declare the <span style="font-family: Courier;">Main</span> module, especially in a simple program like this where there is only one module.<div><br></div><div>In fact, our first program has only one <span style="font-style: italic;">declaration</span>! Let's move on to another example with a bit more complexity.</div></div>
+        <div class="media"></div>
+        <div class="questionAndAnswerContainer"></div>
+        <div class="tagContainer"></div>
+        <button id="editCommentButton" class="" title="Edit this comment"></button>
+      </div></template></st-comment-view></div>
+      <div>
+        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
+      </div>
+      </template></st-comment-group></div>
+      <button id="newCommentButton" class="" title="Create a new comment">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+        </svg>
+        Add a Comment
+      </button></template></st-comment-navigator><st-file-system-navigator class="inactive"><template shadowrootmode="open">
+      <style>
+        .fsView {
+          padding: 8px;
+          margin: 8px;
+          border: 1px solid gray;
+          background-color: rgb(58, 58, 58);
+        }
+
+        .fsFile {
+          list-style-type: none;
+          color: lightblue;
+          text-decoration: underline;
+        }
+        .fsFile:hover {
+          cursor: pointer;
+        }
+
+        .fsDirectory {
+          list-style-type: none;
+        }
+
+        .activeFileSystemFile {
+          font-weight: bold;
+        }
+
+        .editedFile::before {
+          content: "*";
+        }
+
+        .downloadProgressDisplay {
+          display: none;
+        }
+        .downloadInProgress {
+          padding: 10px 20px;
+          display: block;
+        }
+
+        a {
+          color: lightblue;
+          padding: 10px;
+        }
+        a:hover {
+          color: gray;
+        }
+
+        .downloadControls {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        .downloadCodeButton {
+          background-color: gray;
+          color: black;
+          border: none;
+          font-weight: bold;
+          opacity: .85;
+          height: 40px;
+        }
+
+        .smallButton {
+          height: unset;
+        }
+
+        .downloadCodeButton:hover {
+          opacity: 1;
+        }
+      </style>
+
+      <div class="downloadControls">
+        <button class="downloadCodeButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+          </svg>
+          Download code at this point
+        </button>
+        <div class="downloadProgressDisplay">
+          Download in progress, this may take a while...
+        </div>
+        <div class="downloadArea"></div>
+      </div>
+
+      <ul class="fsView fsDirectory"><li>/</li><ul class="fileList"><li id="fileId-0" class="fsFile activeFileSystemFile">main.hs</li></ul></ul></template></st-file-system-navigator></div></template></st-playback-navigator></div>
+      <div class="dragBar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="32" fill="gray" classname="bi bi-grip-vertical" viewBox="4 2 8 8">
+          <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+        </svg>
+      </div>
+      <div class="editorViewSlot" style="width: 1039.2px;"><st-editor-view><template shadowrootmode="open">
+      <style>
+        :host {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        .editor {
+          flex: 1;
+        }
+      </style>
+
+      <div class="editor"><st-ace-editor><template shadowrootmode="open"><style id="ace-tomorrow-night-eighties">.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-tomorrow-night-eighties */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style>
+      <style>
+        :host {
+          height: 100%;
+        }
+
+        .ace_scrollbar {
+          scrollbar-width: thin;
+        }
+        .ace_scrollbar::-webkit-scrollbar {
+          width: .65em;
+          background-color: inherit;
+        }
+        .ace_scrollbar::-webkit-scrollbar-thumb {
+          background: dimgray;
+        }
+
+        .editor {
+          display: flex;
+          flex-direction: column;
+          height:  calc(100% - 25px);
+        }
+
+        .selectedCodeHighlight {
+          background-color: rgb(199, 224, 241);
+          opacity: 0.14;
+          position: absolute;
+        }
+
+        .surroundingCodeHighlight {
+          background-color: rgb(158, 172, 182);
+          opacity: 0.10;
+          position: absolute;
+        }
+
+        .newCodeHighlight {
+          position:absolute;
+          z-index:10; 
+          opacity: 0.6;
+          border-bottom-style: dotted;
+          border-bottom-width: 3px;
+          border-bottom-color: rgb(33, 130, 36);
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
+
+        .insertOnLine {
+          color: rgb(33, 130, 36);
+          font-weight: bold;
+          background-color: rgb(52, 52, 52);
+        }
+
+        .deleteOnLine {
+          text-decoration-line: underline;
+          text-decoration-color: red;
+          text-decoration-style: solid;
+          background-color: rgb(52, 52, 52);
+        }
+      </style>
+
+      <div class="fileTabs"><st-editor-file-tabs><template shadowrootmode="open">
+      <style>
+        .tabDiv {
+          padding: 10px 5px 5px 5px;
+          flex-wrap: nowrap;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        .tabDiv::-webkit-scrollbar {
+          display: none;
+        }
+
+        .fileTab {
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          border: 1px gray solid;
+          padding: 3px 10px;
+        }
+
+        .activeFile {
+          border: 1px lightgray solid;
+          border-bottom: none;
+          background-color: black;
+        }
+
+        .fileUpdated::before {
+          content: "*";
+        }
+      </style>
+
+      <div class="tabDiv"><span id="no-file" class="fileTab dummyTab">&nbsp;</span><span id="fileId-0" class="fileTab activeFile" title="/main.hs">main.hs</span></div></template></st-editor-file-tabs></div>
+      <div class="editor ace_editor ace_hidpi ace-tomorrow-night-eighties ace_dark" style="font-size: 20px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; transform: translate(50px, 27px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 46px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; transform: translate(0px, 0px); width: 46px;"><div class="ace_gutter-cell " style="height: 27px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 27px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 54px;">3<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 81px;">4<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 27px; left: 46px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 0px); width: 993px; height: 688px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 964px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line" style="height: 27px; top: 0px;"><span class="ace_keyword ace_other ace_haskell">module</span><span class="ace_meta ace_declaration ace_module ace_haskell"> </span><span class="ace_support ace_other ace_module ace_haskell">Main</span><span class="ace_meta ace_declaration ace_module ace_haskell"> </span><span class="ace_keyword ace_other ace_haskell">where</span></div><div class="ace_line" style="height: 27px; top: 27px;"></div><div class="ace_line" style="height: 27px; top: 54px;">main <span class="ace_keyword ace_operator ace_haskell">=</span> <span class="ace_keyword ace_control ace_haskell">do</span></div><div class="ace_line" style="height: 27px; top: 81px;">  <span class="ace_support ace_function ace_prelude ace_haskell">putStrLn</span> <span class="ace_punctuation ace_definition ace_string ace_begin ace_haskell">"</span><span class="ace_string ace_quoted ace_double ace_haskell">Hello, World!</span><span class="ace_punctuation ace_definition ace_string ace_end ace_haskell">"</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors" style="display: none;"><div class="ace_cursor" style="display: block; transform: translate(4px, 0px); width: 12px; height: 27px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 634px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="height: 20px; left: 46px; right: 0px; display: none;"><div class="ace_scrollbar-inner" style="height: 20px; width: 993px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></template></st-ace-editor></div>
+      <div class="controls"><st-playback-controls><template shadowrootmode="open">
+      <style>
+        :host {
+          display: flex;
+          align-items: start;
+          padding: 10px;
+        }
+
+        .slider {
+          flex: 1;
+          padding: 0px 10px;
+        }
+        
+        .playbackButton {
+          color: rgb(201, 226, 242);
+          background-color: inherit;
+          border: none;
+          padding: 10px 0px;
+          opacity: .8;
+          cursor: pointer;
+        }
+        
+        .playbackButton:hover {
+          opacity: 1.0;
+        }
+        .playbackControl {
+          flex: 0;
+          display: none;
+        }
+
+        .playbackControl.active {
+          flex: 0;
+          display: initial;
+        }
+
+        .devAvatars {
+          padding: 0px;
+        }
+
+        button {
+          outline: none;
+        }
+      </style>
+
+      <button id="goToNextCommentButton" type="button" class="playbackButton" title="Go to the next comment">
+        <!-- icon url: https://icons.getbootstrap.com/icons/skip-forward-circle-fill/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-skip-forward-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M4.271 5.055a.5.5 0 0 1 .52.038L7.5 7.028V5.5a.5.5 0 0 1 .79-.407L11 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935a.5.5 0 0 1-.79-.407V8.972l-2.71 1.935A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .271-.445z"></path>
+        </svg>
+      </button>
+
+      <div class="slider"><st-playback-slider><template shadowrootmode="open">
+      <style>
+        .slider {
+          -webkit-appearance: none;  
+          border: 1px solid gray;
+          margin: 20px 0px;
+          appearance: none;
+          width: 100%; 
+          height: 9px; 
+          background: rgb(76, 76, 76); 
+          outline: none; 
+          opacity: 0.7; 
+          -webkit-transition: .2s; 
+          transition: opacity .2s;
+        }
+
+        .slider:hover {
+          opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px; 
+          background: #3B4C62;
+          cursor: pointer; 
+          border: 1px solid #C9E2F2;
+          opacity: 1;
+          border-radius: 2px;
+        }
+        
+        .slider::-moz-range-thumb {
+          width: 20px; 
+          height: 20px;
+          background: #3B4C62;
+          cursor: pointer; 
+          border: 1px solid #C9E2F2;
+          opacity: 1;
+          border-radius: 2px;
+        }
+
+        .commentMarker {
+          width: 2px;
+          background-color: inherit;
+          position: absolute;
+          top: -10px;
+          border-left: 2px solid #C9E2F2;
+          opacity: .65;
+          cursor: pointer;
+        }
+
+        .commentMarker:hover {
+          opacity: 1.0;
+        }
+
+        .pips {
+          position: relative; 
+          width: calc(100% - 22px); /* room for 1/2 thumb on each side */
+          margin-left: 11px; /* start 1/2 a thumb from the left to push the pips under the thumb */
+        }
+      </style>
+      <input type="range" class="slider" step="1" min="56" max="176">
+      <div class="pips"><div data-pos="56" class="commentMarker" style="left: 0%">&nbsp;</div><div data-pos="96" class="commentMarker" style="left: 33.33333333333333%">&nbsp;</div><div data-pos="137" class="commentMarker" style="left: 67.5%">&nbsp;</div><div data-pos="150" class="commentMarker" style="left: 78.33333333333333%">&nbsp;</div><div data-pos="157" class="commentMarker" style="left: 84.16666666666667%">&nbsp;</div><div data-pos="176" class="commentMarker" style="left: 100%">&nbsp;</div></div></template></st-playback-slider></div>
+
+      <button id="playButton" type="button" class="playbackControl playbackButton active" title="Play">
+        <!-- icon url: https://icons.getbootstrap.com/icons/play-circle/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"></path>
+        </svg>
+      </button>
+
+      <button id="pauseButton" type="button" class="playbackControl playbackButton" title="Pause">
+        <!-- icon url: https://icons.getbootstrap.com/icons/pause-circle/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"></path>
+        </svg>
+      </button>
+
+      <div class="devAvatars"><st-dev-group-avatar><template shadowrootmode="open">
+      <style>
+        .commentDevelopersDiv {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      </style>
+
+      <div class="commentDevelopersDiv"><st-dev-avatar><template shadowrootmode="open">
+      <style>
+        .devImage {
+          background-color: rgb(59,76,98);
+          border: 1px solid gray;
+          margin: 5px;
+          border-radius: 50%;
+          padding: .25rem;
+          cursor: pointer;
+        }
+
+        .devContainer {
+          display: flex;
+        }
+
+        .displayAdditionalDevInfo {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 5px 0px 5px;
+        }
+
+        .hideAdditionalDevInfo {
+          display: none;
+        }
+
+        a {
+          color: gray;
+        }
+        a:hover {
+          color: lightgray;
+        }
+      </style>
+
+      <div class="devContainer">
+        <img class="devImage" src="https://www.gravatar.com/avatar/5fcc05d044610e96c28c9bb4b7278935?s=40&amp;d=mp" title="Storyteller System system@ourcodestories.com (double click to reveal)" alt="Storyteller System system@ourcodestories.com" height="40" width="40">
+        <span id="additionalDevInfo" class="hideAdditionalDevInfo">
+          <div>Storyteller System</div>
+          <div>
+            <a href="mailto:system@ourcodestories.com">system@ourcodestories.com</a>
+          </div>
+        </span>
+      </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div></template></st-playback-controls></div></template></st-editor-view></div></template></st-code-view></div>
+      <div class="footer"></div></template></st-app>
+  
+</body></html>
