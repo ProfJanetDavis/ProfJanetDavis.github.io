@@ -169,7 +169,7 @@
           <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"></path>
         </svg>
       </span>
-      <span id="readTime" class="hidden">Estimated read time is about 2 minutes</span>
+      <span id="readTime">Estimated read time is about 2 minutes</span>
     </div>
 
     <!-- search bar, code/blog mode buttons and options button -->
@@ -604,7 +604,7 @@
         }
 
       </style>
-      <div class="commentGroups"><st-comment-group id="commentId-0" class="commentId-0 commentId-1"><template shadowrootmode="open">
+      <div class="commentGroups"><st-comment-group id="commentId-0" class="commentId-0 commentId-1 activeCommentGroup"><template shadowrootmode="open">
       <style>
         :host {
           margin: 6px 0px;
@@ -661,7 +661,7 @@
         }
       </style>
 
-      <div class="commentViews"><st-comment-view id="commentId-0" class=""><template shadowrootmode="open">
+      <div class="commentViews"><st-comment-view id="commentId-0" class="activeGroup activeComment"><template shadowrootmode="open">
       <style>
         :host {
           display: block;
@@ -766,7 +766,7 @@
         <div class="questionAndAnswerContainer"></div>
         <div class="tagContainer"></div>
         <button id="editCommentButton" class="" title="Edit this comment"></button>
-      </div></template></st-comment-view><st-comment-view id="commentId-1" class=""><template shadowrootmode="open">
+      </div></template></st-comment-view><st-comment-view id="commentId-1" class="activeGroup"><template shadowrootmode="open">
       <style>
         :host {
           display: block;
@@ -922,7 +922,7 @@
         <button id="editCommentButton" class="" title="Edit this comment"></button>
       </div></template></st-comment-view></div>
       <div>
-        <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
+        <button id="editCommentGroupButton" class="" title="Reorder the comments with drag and drop."></button>
         <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
       </div>
       </template></st-comment-group><st-comment-group id="commentId-2" class="commentId-2"><template shadowrootmode="open">
@@ -1563,7 +1563,7 @@
         </span>
       </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div><div class="commentCount">4/6</div></div></div>
         <div class="commentTitle"></div>
-        <div class="commentText">And now, once again, we have a complete, running program.&nbsp;<div><br></div><div><div>We can already see a key difference between Haskell and imperative programming languages such as Python, Java, and C++:&nbsp;</div><div><br></div><div>A Haskell program is not a sequence of statements. A Haskell program is instead a collection of <span style="font-style: italic;">declarations </span>that assign names to expressions. Think of these declarations as similar to algebraic equations. As we will see later, these declarations can appear in any order.</div></div></div>
+        <div class="commentText">And now, once again, we have a complete, running program.&nbsp;<div><br></div><div><div>We can already see two key differences between Haskell and imperative programming languages such as Python, Java, and C++:&nbsp;</div><div><br></div><div>1. A Haskell program is not a sequence of statements. Instead, a Haskell program is a collection of <span style="font-style: italic;">declarations </span>that assign names to expressions. Think of these declarations as similar to algebraic equations. As we will see later, these declarations can appear in any order.</div></div><div><br></div><div>2. In Haskell, there is not much distinction between variables and functions. The declaration of <span style="font-family: Courier;">main</span> <span style="font-style: italic;">looks</span> like a variable definition, but <span style="font-style: italic;">behaves</span>&nbsp;like a function definition.</div></div>
         <div class="media"></div>
         <div class="questionAndAnswerContainer"></div>
         <div class="tagContainer"></div>
@@ -1789,7 +1789,7 @@
         <button id="editCommentGroupButton" class="inactive" title="Reorder the comments with drag and drop."></button>
         <button id="doneEditingCommentGroupButton" class="inactive" title="End comment reordering."></button>
       </div>
-      </template></st-comment-group><st-comment-group id="commentId-6" class="commentId-6 activeCommentGroup"><template shadowrootmode="open">
+      </template></st-comment-group><st-comment-group id="commentId-6" class="commentId-6"><template shadowrootmode="open">
       <style>
         :host {
           margin: 6px 0px;
@@ -1846,7 +1846,7 @@
         }
       </style>
 
-      <div class="commentViews"><st-comment-view id="commentId-6" class="activeGroup activeComment"><template shadowrootmode="open">
+      <div class="commentViews"><st-comment-view id="commentId-6"><template shadowrootmode="open">
       <style>
         :host {
           display: block;
@@ -2210,8 +2210,8 @@
         }
       </style>
 
-      <div class="tabDiv"><span id="no-file" class="fileTab dummyTab">&nbsp;</span><span id="fileId-0" class="fileTab fileUpdated activeFile" title="/main.hs">main.hs</span></div></template></st-editor-file-tabs></div>
-      <div class="editor ace_editor ace_hidpi ace-tomorrow-night-eighties ace_dark" style="font-size: 20px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; transform: translate(50px, 27px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 46px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; transform: translate(0px, 0px); width: 46px;"><div class="ace_gutter-cell  insertOnLine deleteOnLine" style="height: 27px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell  insertOnLine" style="height: 27px; top: 27px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell  insertOnLine" style="height: 27px; top: 54px;">3<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 27px; left: 46px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 0px); width: 949px; height: 631px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 964px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line" style="height: 27px; top: 0px;">main <span class="ace_keyword ace_operator ace_haskell">=</span> <span class="ace_keyword ace_control ace_haskell">do</span></div><div class="ace_line" style="height: 27px; top: 27px;">    <span class="ace_support ace_function ace_prelude ace_haskell">putStrLn</span> <span class="ace_punctuation ace_definition ace_string ace_begin ace_haskell">"</span><span class="ace_string ace_quoted ace_double ace_haskell">Hello, World!</span><span class="ace_punctuation ace_definition ace_string ace_end ace_haskell">"</span></div><div class="ace_line" style="height: 27px; top: 54px;">    <span class="ace_support ace_function ace_prelude ace_haskell">putStrLn</span> <span class="ace_punctuation ace_definition ace_string ace_begin ace_haskell">"</span><span class="ace_string ace_quoted ace_double ace_haskell">Hello, Haskell!</span><span class="ace_punctuation ace_definition ace_string ace_end ace_haskell">"</span></div></div><div class="ace_layer ace_marker-layer"><div class="newCodeHighlight ace_start ace_br15" style="height: 27px; width: 108.035px; top: 0px; left: 4px;"></div><div class="newCodeHighlight ace_start ace_br15" style="height: 27px; width: 336.109px; top: 27px; left: 4px;"></div><div class="newCodeHighlight ace_start ace_br15" style="height: 27px; width: 360.117px; top: 54px; left: 4px;"></div></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors" style="display: none;"><div class="ace_cursor" style="display: block; transform: translate(4px, 0px); width: 12px; height: 27px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 577px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="height: 20px; left: 46px; right: 0px; display: none;"><div class="ace_scrollbar-inner" style="height: 20px; width: 949px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></template></st-ace-editor></div>
+      <div class="tabDiv"><span id="no-file" class="fileTab dummyTab">&nbsp;</span><span id="fileId-0" class="fileTab activeFile" title="/main.hs">main.hs</span></div></template></st-editor-file-tabs></div>
+      <div class="editor ace_editor ace_hidpi ace-tomorrow-night-eighties ace_dark" style="font-size: 20px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; transform: translate(50px, 27px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 46px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; transform: translate(0px, 0px); width: 46px;"><div class="ace_gutter-cell " style="height: 27px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 27px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 54px;">3<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 27px; top: 81px;">4<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 27px; left: 46px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 0px); width: 949px; height: 631px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 964px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line" style="height: 27px; top: 0px;"><span class="ace_keyword ace_other ace_haskell">module</span><span class="ace_meta ace_declaration ace_module ace_haskell"> </span><span class="ace_support ace_other ace_module ace_haskell">Main</span><span class="ace_meta ace_declaration ace_module ace_haskell"> </span><span class="ace_keyword ace_other ace_haskell">where</span></div><div class="ace_line" style="height: 27px; top: 27px;"></div><div class="ace_line" style="height: 27px; top: 54px;">main <span class="ace_keyword ace_operator ace_haskell">=</span> <span class="ace_keyword ace_control ace_haskell">do</span></div><div class="ace_line" style="height: 27px; top: 81px;">  <span class="ace_support ace_function ace_prelude ace_haskell">putStrLn</span> <span class="ace_punctuation ace_definition ace_string ace_begin ace_haskell">"</span><span class="ace_string ace_quoted ace_double ace_haskell">Hello, World!</span><span class="ace_punctuation ace_definition ace_string ace_end ace_haskell">"</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors" style="display: none;"><div class="ace_cursor" style="display: block; transform: translate(4px, 0px); width: 12px; height: 27px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 577px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="height: 20px; left: 46px; right: 0px; display: none;"><div class="ace_scrollbar-inner" style="height: 20px; width: 949px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></template></st-ace-editor></div>
       <div class="controls"><st-playback-controls><template shadowrootmode="open">
       <style>
         :host {
@@ -2387,11 +2387,11 @@
       </style>
 
       <div class="devContainer">
-        <img class="devImage" src="https://www.gravatar.com/avatar/1c88537a4ea6583e7ffe50844e06e149?s=40&amp;d=mp" title=" davisj@whitman.edu (double click to reveal)" alt=" davisj@whitman.edu" height="40" width="40">
+        <img class="devImage" src="https://www.gravatar.com/avatar/5fcc05d044610e96c28c9bb4b7278935?s=40&amp;d=mp" title="Storyteller System system@ourcodestories.com (double click to reveal)" alt="Storyteller System system@ourcodestories.com" height="40" width="40">
         <span id="additionalDevInfo" class="hideAdditionalDevInfo">
-          <div></div>
+          <div>Storyteller System</div>
           <div>
-            <a href="mailto:davisj@whitman.edu">davisj@whitman.edu</a>
+            <a href="mailto:system@ourcodestories.com">system@ourcodestories.com</a>
           </div>
         </span>
       </div></template></st-dev-avatar></div></template></st-dev-group-avatar></div></template></st-playback-controls></div></template></st-editor-view></div></template></st-code-view></div>
