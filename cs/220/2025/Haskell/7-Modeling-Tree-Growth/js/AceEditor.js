@@ -1,8 +1,7 @@
 class AceEditor extends HTMLElement {
-  constructor(playbackEngine, editorProperties) {
+  constructor(playbackEngine) {
     super();
 
-    this.editorProperties = editorProperties;
     this.playbackEngine = playbackEngine;
     this.aceEditor = null;
     this.searchText = '';
@@ -81,6 +80,32 @@ class AceEditor extends HTMLElement {
           text-decoration-style: solid;
           background-color: rgb(52, 52, 52);
         }
+
+        .st-context-menu {
+          position: absolute;
+          background-color: #2c2c2c; 
+          border: 1px solid gray; 
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+          z-index: 1000;
+          border-radius: 4px; 
+          padding: 8px 0; 
+          color: #f0f0f0; 
+          font-family: Arial, sans-serif; 
+          font-size: 14px; 
+        }
+        .st-context-menu ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .st-context-menu li {
+          padding: 8px 12px;
+          cursor: pointer;
+          color: #f0f0f0;
+        }
+        .st-context-menu li:hover {
+          background-color: #444; 
+        }
       </style>
 
       <div class="fileTabs"></div>
@@ -98,11 +123,11 @@ class AceEditor extends HTMLElement {
     //create the ace editor
     const editor = this.shadowRoot.querySelector('.editor');
     const aceEditor = ace.edit(editor, {
-      theme: this.editorProperties.aceTheme, 
+      theme: this.playbackEngine.editorProperties.aceTheme, 
       value: '',
       showPrintMargin: false,
       readOnly: true,
-      fontSize: this.editorProperties.fontSize,
+      fontSize: this.playbackEngine.editorProperties.fontSize,
       highlightActiveLine: false,
       highlightGutterLine: false,
       scrollPastEnd: true,
@@ -113,12 +138,91 @@ class AceEditor extends HTMLElement {
     //attach the ace editor to the shadow dom
     aceEditor.renderer.attachToShadowRoot();
     aceEditor.renderer.$cursorLayer.element.style.display = "none";
+    // Disable the default context menu
+    aceEditor.container.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
     
+      //count how many comments are in the selected text
+      let numCommentsInSelection = this.getSelectedTextForSelectedTextSearch();
+
+      //build a custom context menu
+      const x = event.clientX;
+      const y = event.clientY;
+      
+      const existingMenu = document.querySelector(".st-context-menu");
+      if (existingMenu) {
+          existingMenu.remove();
+      }
+
+      // Create a custom context menu
+      const menu = document.createElement("div");
+      menu.className = "st-context-menu";
+      menu.style.left = `${x}px`;
+      menu.style.top = `${y}px`;
+      menu.innerHTML = `
+        <ul>
+          <li id="copyMenuItem">Copy</li>
+          <li id="searchMenuItem">Filter ${numCommentsInSelection} Comments in Selection</li>
+        </ul>
+      `;
+
+      // Add hover effect for menu items
+      const style = document.createElement('style');
+      style.textContent = `
+        .st-context-menu li:hover {
+          background-color: #444; 
+        }
+      `;
+      this.shadowRoot.appendChild(menu);
+
+      menu.querySelector('#copyMenuItem').onclick = () => {
+        const selectedText = aceEditor.getSelectedText();
+        if (selectedText) {
+          navigator.clipboard.writeText(selectedText).then(() => {
+            //console.log("Text copied to clipboard: " + selectedText);
+          }).catch((err) => {
+            console.error('Error copying text: ', err);
+          });
+        } else {
+          console.log("No text selected");
+        }
+        menu.remove();  // Remove menu after the action
+      };
+
+      menu.querySelector('#searchMenuItem').onclick = () => {
+        const selectedText = aceEditor.getSelectedText();
+        if (selectedText) {
+          this.notifySearchSelectedText();    
+        } else {
+          console.log("No text selected");
+        }
+        menu.remove();  // Remove menu after the action
+      };
+
+      // Add logic to close the menu when clicking outside
+      const closeMenu = () => {
+        menu.remove();
+        document.removeEventListener("click", closeMenu);
+      };
+
+      document.addEventListener("click", closeMenu);
+    });
+
     //store for later
     this.aceEditor = aceEditor;
 
     //update the editor with the initial file contents
     this.updateForPlaybackMovement();
+
+    //listen for search selected code shift + control + S
+    document.addEventListener('keydown', (e) => {
+      const keyPressed = event.key;
+      const shiftPressed = event.shiftKey;
+      const ctrlPressed = event.ctrlKey;
+      if (ctrlPressed && shiftPressed && keyPressed === 'S') {
+        this.notifySearchSelectedText();
+      }
+    });
   }
 
   disconnectedCallback() {
@@ -152,12 +256,12 @@ class AceEditor extends HTMLElement {
         //if there is a file path
         if(filePath && filePath.trim()) { 
           //if there is NOT an existing file mode for this type of file
-          if(!this.editorProperties.fileModes[filePath]) {
+          if(!this.playbackEngine.editorProperties.fileModes[filePath]) {
             //get the file mode for this file type
-            this.editorProperties.fileModes[filePath] = this.editorProperties.modelist.getModeForPath(filePath);
+            this.playbackEngine.editorProperties.fileModes[filePath] = this.playbackEngine.editorProperties.modelist.getModeForPath(filePath);
           }
           //set the file mode type
-          const fileMode = this.editorProperties.fileModes[filePath];
+          const fileMode = this.playbackEngine.editorProperties.fileModes[filePath];
           this.aceEditor.getSession().setMode(fileMode.mode);
         }
 
@@ -235,10 +339,10 @@ class AceEditor extends HTMLElement {
   handleSelectionLinesAboveBelow = () => {
     //get the selected text (there might be multiple highlighted ranges)
     const selection = this.aceEditor.getSelection();
-    const ranges = selection.getAllRanges();
-
+    //Ace sometimes adds empty ranges so remove them
+    const ranges = selection.getAllRanges().filter(range => !range.isEmpty());
     //if there is anything selected in the editor
-    if(ranges.length > 0 && ranges.some(currentRange => currentRange.isEmpty() === false)) {
+    if(ranges.length > 0) {
       //get the min and max line numbers where there is selected text
       let lowestLineNumber = Number.MAX_SAFE_INTEGER;
       let highestLineNumber = 0;
@@ -434,7 +538,8 @@ class AceEditor extends HTMLElement {
     
     //get the selected text from the editor (there might be multiple highlighted ranges)
     const selection = this.aceEditor.getSelection();
-    const ranges = selection.getAllRanges().filter(currentRange => currentRange.isEmpty() === false);
+    //Ace sometimes adds empty ranges so remove them
+    const ranges = selection.getAllRanges().filter(range => !range.isEmpty());
 
     //if there are any non-empty selections in the editor
     if(ranges.length > 0) {
@@ -472,6 +577,7 @@ class AceEditor extends HTMLElement {
           const selectedCodeBlock = {
             fileId: this.playbackEngine.activeFileId,
             selectedText: selectedText,
+            selectedTextEventIds: this.playbackEngine.editorState.getEventIds(this.playbackEngine.activeFileId, range.start.row, range.start.column, range.end.row, range.end.column - 1), //ace range includes one beyond the end, exclude the end row/end col event 
             startRow: range.start.row,
             startColumn: range.start.column,
             endRow: range.end.row,
@@ -483,6 +589,32 @@ class AceEditor extends HTMLElement {
       });
     }
     return selectedCode;
+  }
+
+  getSelectedTextRangeStrings() {
+    const selection = this.aceEditor.getSelection();
+    //Ace sometimes adds empty ranges so remove them
+    const ranges = selection.getAllRanges().filter(range => !range.isEmpty());
+
+    const rangeData = [];
+    for(let i = 0;i < ranges.length;i++) {
+      const range = ranges[i];
+      //add one except for the end column to 
+      rangeData.push(`line${range.start.row + 1}.${range.start.column + 1}-line${range.end.row + 1}.${range.end.column}`);
+    }
+    return rangeData;
+  }
+
+  getSelectedLineNumbersAndColumns() {
+    let searchText = 'selected-text:';
+    const rangeData = this.getSelectedTextRangeStrings();
+    searchText += rangeData.join(',');
+    return searchText;
+  }
+
+  getSelectedTextForSelectedTextSearch() {
+    const rangeData = this.getSelectedTextRangeStrings();
+    return this.playbackEngine.countCommentsInSelection(rangeData);
   }
 
   highlightSearch() {
@@ -509,6 +641,18 @@ class AceEditor extends HTMLElement {
       this.updateForPlaybackMovement();
       this.updateForCommentSelected();
     }
+  }
+
+  notifySearchSelectedText() {
+    //send an event that the search functionality should be enabled
+    const event = new CustomEvent('search', { 
+      detail: {
+        searchText: this.getSelectedLineNumbersAndColumns(),
+      },
+      bubbles: true, 
+      composed: true 
+    });
+    this.dispatchEvent(event);
   }
 }
 

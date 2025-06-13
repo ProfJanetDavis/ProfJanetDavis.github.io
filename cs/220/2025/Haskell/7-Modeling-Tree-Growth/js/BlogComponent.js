@@ -1,9 +1,8 @@
 class BlogComponent extends HTMLElement {
-  constructor(playbackEngine, comment, editorProperties) {
+  constructor(playbackEngine, comment) {
     super();
     this.playbackEngine = playbackEngine;
     this.comment = comment;
-    this.editorProperties = editorProperties;
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(this.getTemplate());
@@ -58,8 +57,15 @@ class BlogComponent extends HTMLElement {
         .searchHighlight {
           background-color: #517EB0;
         }
+
+        #aiInput {
+          margin-top: 5px;
+          padding-top: 5px;
+          border-top: 1px solid rgb(83, 84, 86);
+        }
       </style>
 
+      <div class="tts-container"></div>
       <div class="commentTitle"></div>
       <div class="blogCommentText"></div>
       <div class="commentVideos"></div>
@@ -67,7 +73,8 @@ class BlogComponent extends HTMLElement {
       <div class="codeEditor"></div>
       <div class="commentImages"></div>
       <div class="tagContainer"></div>
-      <div class="questionAndAnswerContainer"></div>`;
+      <div class="questionAndAnswerContainer"></div>
+      <div id="aiInput"></div>`;
 
     return template.content.cloneNode(true);
   }
@@ -81,8 +88,27 @@ class BlogComponent extends HTMLElement {
 
     //add the comment text
     const blogCommentText = this.shadowRoot.querySelector('.blogCommentText');
-    blogCommentText.innerHTML = this.comment.commentText;
-
+    let commentText = this.comment.commentText;
+    if(this.comment.textFormat && this.comment.textFormat === "markdown") {
+      const md = markdownit();
+      commentText = md.render(this.comment.commentText);
+    }
+    blogCommentText.innerHTML = commentText;
+    
+    //text to speech control
+    const ttsContainer = this.shadowRoot.querySelector('.tts-container');
+    let ttsControl;
+    //if this comment has a tts file path
+    if(this.comment.ttsFilePath) {
+      //create a tts control with the file path
+      ttsControl = new TextToSpeechControl(this.comment.ttsFilePath, null, this.playbackEngine.editorProperties.ttsSpeed);
+      ttsContainer.appendChild(ttsControl);
+    } else if(this.playbackEngine.playbackData.aiEnabled) { //no tts file path in this comment
+      //create a tts control with the comment text
+      ttsControl = new TextToSpeechControl(null, this.comment.commentTitle + " " + this.comment.commentText, this.playbackEngine.editorProperties.ttsSpeed);
+      ttsContainer.appendChild(ttsControl);
+    } //else- no tts control
+    
     //add the media
     //videos
     const commentVideos = this.shadowRoot.querySelector('.commentVideos');
@@ -118,7 +144,7 @@ class BlogComponent extends HTMLElement {
     //if there is some code to display
     if (this.comment.selectedCodeBlocks[0]) {
       //create a code snippet
-      const blogCodeSnippet = new BlogCodeSnippet(this.comment, this.editorProperties);
+      const blogCodeSnippet = new BlogCodeSnippet(this.comment, this.playbackEngine);
       const codeEditor = this.shadowRoot.querySelector('.codeEditor');
       codeEditor.appendChild(blogCodeSnippet);
     }
@@ -146,10 +172,26 @@ class BlogComponent extends HTMLElement {
       questionAndAnswerContainer.appendChild(qaView);
     }
 
+    //ai input
+    if(!this.isDescriptionComment && this.playbackEngine.playbackData.aiEnabled) {
+      //create an AI input to get suggestions
+      const aiInput = this.shadowRoot.querySelector('#aiInput');
+      const promptCollapsable = new Collapsable('Ask About This Code');
+      const aiPromptInput = new AIPromptInput(this.playbackEngine, false);
+      const aiGeneratedQ = new AIGeneratedQuestion(this.playbackEngine);
+      const aiElements = document.createElement('div');
+      aiElements.classList.add('aiElements');
+      aiElements.appendChild(aiPromptInput);
+      aiElements.appendChild(document.createElement('hr'));
+      aiElements.appendChild(aiGeneratedQ);
+      promptCollapsable.addContent(aiElements);
+      aiInput.appendChild(promptCollapsable);
+    }
+    
     //add an event handler so users can click comments
     this.addEventListener('click', event => {
-      //store this as the active comment
-      this.playbackEngine.activeComment = this.comment;
+      //move to the comment that is clicked
+      this.playbackEngine.stepToCommentById(this.comment.id);
     });
   }
 
@@ -187,6 +229,11 @@ class BlogComponent extends HTMLElement {
     }
   }
 
+  updateTTSSpeed(speed) {
+    const ttsControl = this.shadowRoot.querySelector('st-text-to-speech-control');
+    ttsControl.updateTTSSpeed(speed);
+  }
+
   revealCommentsBeforeSearch() {
     const tagView = this.shadowRoot.querySelector('st-tag-view');
     if(tagView) {
@@ -222,7 +269,7 @@ class BlogComponent extends HTMLElement {
           codeEditor.innerHTML = '';
 
           //create a code snippet
-          const blogCodeSnippet = new BlogCodeSnippet(this.comment, this.editorProperties);
+          const blogCodeSnippet = new BlogCodeSnippet(this.comment, this.playbackEngine);
           codeEditor.appendChild(blogCodeSnippet);
         }
       }

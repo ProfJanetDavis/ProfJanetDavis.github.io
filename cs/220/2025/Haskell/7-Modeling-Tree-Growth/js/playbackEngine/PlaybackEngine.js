@@ -1,11 +1,21 @@
 class PlaybackEngine {
-  constructor(playbackData) {
+  constructor(playbackData, startingCommentIndex, startingEventIndex) {
     //playback data
     this.playbackData = playbackData;
     
     //the state of all the files in the playback as it progresses
     this.editorState = new EditorState();
-    
+
+    //editor info
+    this.editorProperties = {
+      fontSize: 20,
+      //potential ace editor themes: monokai, gruvbox, idle_fingers, pastel_on_dark, tomorrow_night, tomorrow_night_eighties, twilight
+      aceTheme: 'ace/theme/tomorrow_night_eighties',
+      modelist: ace.require("ace/ext/modelist"),
+      fileModes: {},
+      ttsSpeed: 1.0 //text to speech speed
+    };
+
     //used to mark changes in the files
     this.newCodeMarkerGenerator = null;
     
@@ -30,15 +40,8 @@ class PlaybackEngine {
       numberOfCommentGroupsChanged: false,
       fileEditLineNumber: -1,
       fileEditColumn: -1,
-    };
-
-    //aggregate info about the playback's comments
-    this.commentInfo = {
-      totalNumberOfComments: 0,
-      allTags: [],
-      allCommentsInGroups: [],
-      commentGroupPositions: [],
-      flattenedComments: []  
+      previousCommentState: {}, //most recent states of code at comment points
+      currentCommentState: {},
     };
 
     //create aggregate info about comments
@@ -47,6 +50,13 @@ class PlaybackEngine {
     //count the events at the beginning that shouldn't be played back because
     //they were part of a project's initial state
     this.skipIrrelevantEvents();
+
+    //if there was a request to start at a specific comment or event, start there
+    if(startingCommentIndex) {
+      this.stepToCommentByIndex(startingCommentIndex);
+    } else if(startingEventIndex) {
+      this.stepToEventNumber(startingEventIndex);
+    }
   }
 
   skipIrrelevantEvents() {
@@ -78,7 +88,9 @@ class PlaybackEngine {
       hasNewActiveDevGroup: false,
       numberOfCommentGroupsChanged: false,
       fileEditLineNumber: -1,
-      fileEditColumn: -1
+      fileEditColumn: -1,
+      previousCommentState: this.mostRecentChanges.currentCommentState, //use the most recent state as the previous state
+      currentCommentState: this.mostRecentChanges.currentCommentState, //use the most recent state until it gets updated later
     };
   }
   
@@ -107,6 +119,78 @@ class PlaybackEngine {
       this.mostRecentChanges.hasNewActiveDevGroup = true;
       this.activeDevGroupId = devGroupId;
     }
+  }
+
+  getMostRecentFileEdits(fromLastComment) {
+    let codeChangesSummary = "";
+    let currentCodeSource;
+    let authorCommentText;
+
+    //if the summary is only for the code since the last comment
+    if(fromLastComment) {
+      //holds the two previous states of the code
+      let originalCodeSource;
+      //if the last event was on a comment
+      if(this.mostRecentChanges.endedOnAComment) {
+        //use the state at the last two comments
+        originalCodeSource = this.mostRecentChanges.previousCommentState;
+        currentCodeSource = this.mostRecentChanges.currentCommentState;
+        if(this.activeComment) {
+          authorCommentText = this.activeComment.commentText;
+        }
+      } else {
+        //use the most recent comment state and the current state of the files
+        originalCodeSource = this.mostRecentChanges.currentCommentState;
+        currentCodeSource = this.editorState.getFiles();
+      }
+      
+      //get only the changed code
+      for(const fileId in currentCodeSource) {
+        const filePath = this.editorState.getFilePath(fileId);
+        const codeFromCurrentState = currentCodeSource[fileId];
+        const codeFromPreviousState = originalCodeSource[fileId];
+        
+        //if there is some code and it is different than the previous state
+        if(codeFromCurrentState !== "" && codeFromPreviousState !== "" && codeFromCurrentState !== codeFromPreviousState) {
+          if(codeFromPreviousState) {
+            codeChangesSummary += `This is the original code:\n`;
+            codeChangesSummary += `File: ${filePath}\n\n`;
+            codeChangesSummary += codeFromPreviousState;
+            codeChangesSummary += "\n\n";
+          }
+
+          if(codeFromCurrentState) {
+            codeChangesSummary += `This is the new code:\n`;
+            codeChangesSummary += `File: ${filePath}\n\n`;
+            codeChangesSummary += codeFromCurrentState;
+            codeChangesSummary += "\n\n";
+          }
+        }
+      } 
+    } else { //describe all of the code
+      //get the code as it is in the editor now
+      currentCodeSource = this.editorState.getFiles();
+
+      codeChangesSummary = "This is the code:\n";
+      for(const fileId in currentCodeSource) {
+        const filePath = this.editorState.getFilePath(fileId);
+        const codeFromCurrentState = currentCodeSource[fileId];
+
+        if(codeFromCurrentState) {
+          codeChangesSummary += `File: ${filePath}\n\n`;
+          codeChangesSummary += codeFromCurrentState;
+          codeChangesSummary += "\n\n";
+        }
+      }
+    }
+
+    if(authorCommentText) {
+      codeChangesSummary += "The author of this code had to say this about it:\n";
+      codeChangesSummary += authorCommentText;
+      codeChangesSummary += "\n\n";
+    }
+
+    return codeChangesSummary;
   }
 
   stepForward(numberOfSteps, trackNewCodeChanges=true) {
@@ -222,6 +306,14 @@ class PlaybackEngine {
     } //else- it is 0 and no change is needed
   }
 
+  stepToCommentByIndex(commentIndex) {
+    //if the comment index is within the bounds of the comments
+    if(commentIndex >= 0 && commentIndex < this.commentInfo.totalNumberOfComments) {
+      //find the id of the requested comment and step to it
+      this.stepToCommentById(this.commentInfo.flattenedComments[commentIndex].id);
+    }
+  }
+
   //move by clicking on an event
   stepToCommentById(commentId) {
     //find the comment 
@@ -236,6 +328,12 @@ class PlaybackEngine {
       if(comment.selectedCodeBlocks.length > 0) {
         //mark the active file where the first highlighted code is
         this.changeActiveFileId(comment.selectedCodeBlocks[0].fileId);
+      } else { //there is no selected code
+        //mark the file where the most recent event took place as the active file
+        const commentCurrentFileId = this.editorState.getFileId(comment.currentFilePath);
+        if(commentCurrentFileId) {
+          this.changeActiveFileId(commentCurrentFileId);
+        }
       }
 
       //record the active comment
@@ -332,7 +430,8 @@ class PlaybackEngine {
       allTags: [],
       allCommentsInGroups: [],
       commentGroupPositions: [],
-      flattenedComments: []  
+      flattenedComments: [],
+      selectedEventIdsFromComments: {} //maps selected comment event ids to comment ids
     };
 
     //holds the groups for sorting
@@ -340,10 +439,29 @@ class PlaybackEngine {
     
     //go through all of the comments
     for(let eventId in this.playbackData.comments) {
+      //get the group of comments at an event
+      const commentsAtEvent = this.playbackData.comments[eventId];
+      
+      //go through the comments at a single pause point
+      for(let i = 0;i < commentsAtEvent.length;i++) {
+        //get one comment at a time
+        const comment = commentsAtEvent[i];
+
+        //go through each block of selected code
+        for (let i = 0; i < comment.selectedCodeBlocks.length; i++) {
+          const block = comment.selectedCodeBlocks[i];
+          for (let j = 0; block.selectedTextEventIds && j < block.selectedTextEventIds.length; j++) {
+            const selectedCodeEventId = block.selectedTextEventIds[j];
+            //associate the selected event id with the comment it is in
+            this.commentInfo.selectedEventIdsFromComments[selectedCodeEventId] = comment.id;
+          }
+        }
+      }
+
       //create groups of comments and where they land in the sequence of events
       orderedCommentGroups.push({
-        comments: this.playbackData.comments[eventId], 
-        eventSequenceNumber: this.playbackData.comments[eventId][0].displayCommentEventSequenceNumber
+        comments: commentsAtEvent, 
+        eventSequenceNumber: commentsAtEvent[0].displayCommentEventSequenceNumber
       });
     }
     
@@ -389,6 +507,9 @@ class PlaybackEngine {
     if (this.playbackData.comments[currentEvent.id]) {
       //landed on an event with at least one comment
       this.mostRecentChanges.endedOnAComment = true;
+
+      //update the current state of the files at the comment (previous state already updated in clearMostRecentChanges())
+      this.mostRecentChanges.currentCommentState = this.editorState.getFiles();
 
       //get all of the comments at this event
       const allCommentsAtCurrentEvent = this.playbackData.comments[currentEvent.id];
@@ -602,6 +723,8 @@ class PlaybackEngine {
     //check for a specialized search: 'comment:searchText', 'code:searchText', 'tag:searchText', 'question:searchText'
     let searchType = 'all';
     const separatorPosition = searchText.indexOf(':');
+    let selectedTextEventIds = null;
+
     if(separatorPosition !== -1) {
       const firstPart = searchText.substring(0, separatorPosition);
       const secondPart = searchText.substring(separatorPosition + 1);
@@ -614,6 +737,20 @@ class PlaybackEngine {
       } else if(firstPart === 'tag') {
         searchType = firstPart;
         searchText = secondPart;
+      } else if(firstPart === 'selected-text') {
+        searchType = firstPart;
+        searchText = secondPart;
+        selectedTextEventIds = new Set();
+        const ranges = secondPart.split(',');
+        for(let i = 0;i < ranges.length;i++) {
+          const rangeString = ranges[i];
+          const rangeData = this.splitSelectedTextIntoRanges(rangeString);
+          const eventIds = this.editorState.getEventIds(this.activeFileId, rangeData.startRow, rangeData.startColumn, rangeData.endRow, rangeData.endColumn);
+          for(let j = 0;j < eventIds.length;j++) {
+            const eventId = eventIds[j];
+            selectedTextEventIds.add(eventId);
+          }
+        }
       } else if(firstPart === 'question') {
         searchType = firstPart;
         searchText = secondPart;
@@ -646,52 +783,77 @@ class PlaybackEngine {
           searchText: searchText
         };
 
-        //if it is a general search of a specific specialized search
-        if(searchType === 'all' || searchType === 'code') {
-          comment.selectedCodeBlocks.some(block => {
-            if(block.selectedText.toLowerCase().includes(searchText.toLowerCase())) {
-              isRelevantComment = true;
-              searchResult.inSelectedText = true;
-            }
-          });
-        }
-
-        if(searchType === 'all' || searchType === 'comment') {
-          //strip all html and make lowercase
-          const cleansedCommentText = comment.commentText.replace(removeHTMLTagsRegEx, '').toLowerCase();
-          const cleansedCommentTitle = comment.commentTitle.replace(removeHTMLTagsRegEx, '').toLowerCase();
-          //check the comment text and the comment title
-          if(cleansedCommentText.includes(searchText.toLowerCase()) || cleansedCommentTitle.includes(searchText.toLowerCase())) {
-            isRelevantComment = true;
-            searchResult.inCommentText = true;
+        if(searchType === 'selected-text') {
+          if(comment.selectedCodeBlocks.length > 0) {
+            //go through each block of selected code
+            comment.selectedCodeBlocks.forEach(block => {
+              if(block.selectedTextEventIds) { //older playbacks may not have this
+                block.selectedTextEventIds.forEach(selectedCodeEventId => {
+                  if(selectedTextEventIds.has(selectedCodeEventId)) {
+                    isRelevantComment = true;
+                    searchResult.inSelectedText = true;
+                    //break;
+                  }
+                });
+              }
+            });
           }
-        }
-
-        if(searchType === 'all' || searchType === 'tag') {
-          if(comment.commentTags.some(tag => tag.toLowerCase().includes(searchText.toLowerCase()))) {
-            isRelevantComment = true;
-            searchResult.inTags = true;
+        } else {
+          //if it is a general search of a specific specialized search
+          if(searchType === 'all' || searchType === 'code') {
+            comment.selectedCodeBlocks.some(block => {
+              if(block.selectedText.toLowerCase().includes(searchText.toLowerCase())) {
+                isRelevantComment = true;
+                searchResult.inSelectedText = true;
+              }
+            });
           }
-        }
 
-        if(searchType === 'all' || searchType === 'question') {
-          if(comment.questionCommentData) {
+          if(searchType === 'all' || searchType === 'comment') {
             //strip all html and make lowercase
-            const cleansedQuestion = comment.questionCommentData.question.replace(removeHTMLTagsRegEx, '').toLowerCase();
-            if(cleansedQuestion.includes(searchText.toLowerCase())) {
-              isRelevantComment = true;
-              searchResult.inQuestion = true;
+            let cleansedCommentText;
+            //if in markdown convert it to html
+            if(comment.textFormat && comment.textFormat === 'markdown') {
+              const md = markdownit();
+              cleansedCommentText = md.render(comment.commentText);
+            } else { //not markdown, already in html
+              cleansedCommentText = comment.commentText
             }
+            cleansedCommentText = cleansedCommentText.replace(removeHTMLTagsRegEx, '').toLowerCase();
+            const cleansedCommentTitle = comment.commentTitle.replace(removeHTMLTagsRegEx, '').toLowerCase();
+            //check the comment text and the comment title
+            if(cleansedCommentText.includes(searchText.toLowerCase()) || cleansedCommentTitle.includes(searchText.toLowerCase())) {
+              isRelevantComment = true;
+              searchResult.inCommentText = true;
+            }
+          }
 
-            if(comment.questionCommentData.allAnswers.some(answer => answer.toLowerCase().includes(searchText.toLowerCase()))) {
+          if(searchType === 'all' || searchType === 'tag') {
+            if(comment.commentTags.some(tag => tag.toLowerCase().includes(searchText.toLowerCase()))) {
               isRelevantComment = true;
-              searchResult.inQuestion = true;
+              searchResult.inTags = true;
             }
-            //strip all html and make lowercase
-            const cleansedExplanation = comment.questionCommentData.explanation.replace(removeHTMLTagsRegEx, '').toLowerCase();
-            if(comment.questionCommentData.explanation && cleansedExplanation.includes(searchText.toLowerCase())) {
-              isRelevantComment = true;
-              searchResult.inQuestion = true;
+          }
+
+          if(searchType === 'all' || searchType === 'question') {
+            if(comment.questionCommentData) {
+              //strip all html and make lowercase
+              const cleansedQuestion = comment.questionCommentData.question.replace(removeHTMLTagsRegEx, '').toLowerCase();
+              if(cleansedQuestion.includes(searchText.toLowerCase())) {
+                isRelevantComment = true;
+                searchResult.inQuestion = true;
+              }
+
+              if(comment.questionCommentData.allAnswers.some(answer => answer.toLowerCase().includes(searchText.toLowerCase()))) {
+                isRelevantComment = true;
+                searchResult.inQuestion = true;
+              }
+              //strip all html and make lowercase
+              const cleansedExplanation = comment.questionCommentData.explanation.replace(removeHTMLTagsRegEx, '').toLowerCase();
+              if(comment.questionCommentData.explanation && cleansedExplanation.includes(searchText.toLowerCase())) {
+                isRelevantComment = true;
+                searchResult.inQuestion = true;
+              }
             }
           }
         }
@@ -707,6 +869,51 @@ class PlaybackEngine {
       }
     }
     return searchResults;
+  }
+
+  splitSelectedTextIntoRanges(rangeString) {
+    //split into two parts "line3.1-line4.7"
+    const rangeSplit = rangeString.split('-');
+
+    const fromSplit = rangeSplit[0]; //"line3.1"
+    const toSplit = rangeSplit[1]; //"line4.7"
+
+    const fromParts = fromSplit.split('.'); //["line3", "1"]
+    //filter out the word 'line' and subtract 1 to make it 0 based
+    const startRow = Number(fromParts[0].substring('line'.length)) - 1;
+    //subtract 1 to make it 0 based
+    const startColumn = Number(fromParts[1]) - 1;
+
+    //see above
+    const toParts = toSplit.split('.');
+    const endRow = Number(toParts[0].substring('line'.length)) - 1;
+    const endColumn = Number(toParts[1]) - 1;
+    
+    return {startRow, startColumn, endRow, endColumn};
+  }
+
+  countCommentsInSelection(rangeStrings) {
+    //create a set to hold comment ids where some selected text is in the comment
+    let commentIds = new Set();
+
+    //go through the array of range strings (ex. ["line3.1-line4.5"])
+    for(let i = 0;i < rangeStrings.length;i++)
+    {
+      const rangeData = this.splitSelectedTextIntoRanges(rangeStrings[i]);
+      //get the event ids in the selected range
+      const selectedEventIds = this.editorState.getEventIds(this.activeFileId, rangeData.startRow, rangeData.startColumn, rangeData.endRow, rangeData.endColumn);
+      
+      //collect the comment ids if they belong to a comment
+      for(let j = 0;j < selectedEventIds.length;j++) {
+        //check to see if the selected event is part of the text in a comment
+        if(this.commentInfo.selectedEventIdsFromComments[selectedEventIds[j]]) {
+          //store the comment ids only once (dups ignored)
+          commentIds.add(this.commentInfo.selectedEventIdsFromComments[selectedEventIds[j]]);
+        }
+      }
+    }
+    //return how many distinct comments there are in the selected text
+    return commentIds.size;
   }
 
   replaceAllHTMLWithACharacter(htmlText, character=' ') {
@@ -729,15 +936,15 @@ class PlaybackEngine {
     const ignoreCharacter = '\0';
 
     //replace all the html tags with the ignore character
-    const cleansedHTML = this.replaceAllHTMLWithACharacter(htmlString.toLowerCase(), ignoreCharacter);
+    const strippedAndReplacedHTML = this.replaceAllHTMLWithACharacter(htmlString, ignoreCharacter).toLowerCase();
     const cleansedSearchText = searchText.toLowerCase();
     
     //positions where a match of the search text happened
     const matchPositions = [];
     //go through the entire string of html and look for an exact match
-    for(let i = 0;i < cleansedHTML.length;i++) {
-      //ignore the replaced html tags
-      const matchData = this.findMatch(i, cleansedHTML, cleansedSearchText, ignoreCharacter);
+    for(let i = 0;i < strippedAndReplacedHTML.length;i++) {
+      //search while ignoring the replaced html tags
+      const matchData = this.findMatch(i, strippedAndReplacedHTML, cleansedSearchText, ignoreCharacter);
       if(matchData.match) {
         matchPositions.push(matchData);
         //skip all of the found text to the next possible match
@@ -759,10 +966,10 @@ class PlaybackEngine {
     return htmlString;
   }
 
-  findMatch(startPos, htmlText, searchText, ignoreCharacter) {
+  findMatch(startPos, strippedAndReplacedHTML, searchText, ignoreCharacter) {
     const retVal = {
       match: false, //assume there was no match
-      startPos: startPos,
+      startPos: -1,
       endPos: Number.MAX_SAFE_INTEGER
     };
 
@@ -770,25 +977,28 @@ class PlaybackEngine {
     let searchTextPos = 0;
 
     //go through all of the characters in the html
-    for(let i = startPos;i < htmlText.length;i++) {
+    for(let i = startPos;i < strippedAndReplacedHTML.length;i++) {
       //if it is a character that should be evaluated
-      if(htmlText.charAt(i) !== ignoreCharacter) {
+      if(strippedAndReplacedHTML.charAt(i) !== ignoreCharacter) {
         //if it does not match the search 
-        if(htmlText.charAt(i) !== searchText[searchTextPos]) {
+        if(strippedAndReplacedHTML.charAt(i) === searchText[searchTextPos]) {
+          //set the starting position of the match if this is the first character found
+          retVal.startPos = (retVal.startPos === -1) ? i : retVal.startPos;
+          //update the end of the match
+          retVal.endPos = i;
+          //move to the next character of the search text
+          searchTextPos++;
+        } else { //at least one character does not match
           break;
-        } //else- there is a match in the search text and the html
-        //update the end of the match
-        retVal.endPos = i;
-        //move to the next character of the search text
-        searchTextPos++;
-
+        }
+        
         //if all of the characters have been found
         if(searchTextPos === searchText.length) {
           //indicate success and stop looking
           retVal.match = true;
           break;
         }
-      }
+      } //else- ignore the character and move i forward
     }
 
     return retVal;
@@ -808,6 +1018,18 @@ class PlaybackEngine {
 
   getReadTimeEstimate() {
     return this.playbackData.estimatedReadTime;
+  }
+
+  getCommentIndex(commentId) {
+    //get the position of the comment in the array of all comments
+    let commentIndex = -1;
+    for(let i = 0;i < this.commentInfo.flattenedComments.length;i++) {
+      if(this.commentInfo.flattenedComments[i].id === commentId) {
+        commentIndex = i;
+        break;
+      }
+    }
+    return commentIndex;
   }
 
   addComment(newComment) {
