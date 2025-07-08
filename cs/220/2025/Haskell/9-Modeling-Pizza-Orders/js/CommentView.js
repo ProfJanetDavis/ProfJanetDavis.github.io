@@ -60,6 +60,7 @@ class CommentView extends HTMLElement {
         a:hover {
           opacity: 80%;
         }
+
         .commentTopBar {
           border-bottom: 1px solid rgb(83, 84, 86);
           margin-bottom: 8px;
@@ -68,6 +69,7 @@ class CommentView extends HTMLElement {
 
         .commentCount {
           font-size: .95em;
+          padding-bottom: 3px;
           display: inline;
           color: rgb(127, 138, 148);
         }
@@ -96,15 +98,35 @@ class CommentView extends HTMLElement {
         .commentBar {
           display: flex;
           justify-content: space-between;
+          align-items: center;
         }
 
-        .commentVideo, .commentAudio {
-          width: 100%;
-          padding-bottom: 5px;
+        .commentDevelopersDiv {
+          display: flex;
+          align-items: center;
         }
 
-        .inactive {
-          display: none;
+        .commentCountContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin-bottom: 5px;
+        }
+
+        .descriptionCommentTopBar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .descriptionCommentTopBar .titleBar {
+          flex: 1;
+          text-align: center;
+        }
+
+        .descriptionCommentTopBar .commentCountContainer {
+          margin-left: auto;
         }
 
         .searchHighlight {
@@ -118,6 +140,7 @@ class CommentView extends HTMLElement {
         <div class="media"></div>
         <div class="questionAndAnswerContainer"></div>
         <div class="tagContainer"></div>
+        <div id="aiInput"></div>
         <button id="editCommentButton" class="inactive" title="Edit this comment"></button>
       </div>`;
 
@@ -127,6 +150,7 @@ class CommentView extends HTMLElement {
   connectedCallback() {
     const commentView = this.shadowRoot.host;
     commentView.addEventListener('click', this.commentClicked);
+    document.addEventListener('keydown', this.ttsKeyboardPress);
 
     //if this is an editable playback
     if(this.playbackEngine.playbackData.isEditable) {
@@ -146,7 +170,13 @@ class CommentView extends HTMLElement {
     }
     //comment text
     const commentText = this.shadowRoot.querySelector('.commentText');
-    commentText.innerHTML = this.comment.commentText;
+    let formattedCommentText = this.comment.commentText;
+    //if the text format is markdown, convert it to html
+    if(this.comment.textFormat && this.comment.textFormat === 'markdown') {
+      const md = markdownit();
+      formattedCommentText = md.render(this.comment.commentText);
+    }
+    commentText.innerHTML = formattedCommentText;
     //media
     const media = this.shadowRoot.querySelector('.media');
     //videos
@@ -184,21 +214,41 @@ class CommentView extends HTMLElement {
 
     //if there is a q&a
     if(this.comment.questionCommentData && this.comment.questionCommentData.question) {
-      //create a tag view to display the tags
       const questionAndAnswerContainer = this.shadowRoot.querySelector('.questionAndAnswerContainer');
       const qaView = new QuestionAnswerView(this.comment);
       questionAndAnswerContainer.appendChild(qaView);
+    }
+
+    //ai input
+    if(!this.isDescriptionComment && this.playbackEngine.playbackData.aiEnabled) {
+      //create an AI input to get suggestions
+      const aiInput = this.shadowRoot.querySelector('#aiInput');
+      const promptCollapsable = new Collapsable('Ask About This Code');
+      const aiPromptInput = new AIPromptInput(this.playbackEngine, false);
+      const aiGeneratedQ = new AIGeneratedQuestion(this.playbackEngine);
+      const aiElements = document.createElement('div');
+      aiElements.classList.add('aiElements');
+      aiElements.appendChild(aiPromptInput);
+      aiElements.appendChild(document.createElement('hr'));
+      aiElements.appendChild(aiGeneratedQ);
+      promptCollapsable.addContent(aiElements);
+      aiInput.appendChild(promptCollapsable);
     }
   }
 
   disconnectedCallback() {
     const commentView = this.shadowRoot.host;
     commentView.removeEventListener('click', this.commentClicked);
+    document.removeEventListener('keydown', this.ttsKeyboardPress);
   }
 
   makeCommentViewActive() {
     //make this comment view have the active class
     this.shadowRoot.host.classList.add('activeComment');
+
+    //make the aiInput visible
+    const aiInput = this.shadowRoot.querySelector('#aiInput');
+    aiInput.style.display = 'block';
 
     //get the rectangle around the active comment that is displayed
     const commentRectangle = this.shadowRoot.host.getBoundingClientRect();
@@ -211,6 +261,11 @@ class CommentView extends HTMLElement {
   }
   makeCommentViewInactive() {
     this.shadowRoot.host.classList.remove('activeComment');
+
+    //make the aiInput invisible
+    const aiInput = this.shadowRoot.querySelector('#aiInput');
+    aiInput.style.display = 'none';
+    
   }
 
   makePartOfActiveGroup() {
@@ -244,13 +299,49 @@ class CommentView extends HTMLElement {
     this.sendActiveCommentEvent();
   }
 
+  ttsKeyboardPress = event => {
+    //if p was pressed and this is the active comment
+    if (event.key === 'p' && this.comment.id === this.playbackEngine.activeComment.id) {
+      //simulate a button click
+      const ttsControl = this.shadowRoot.querySelector('st-text-to-speech-control');
+      ttsControl.handleButtonClick();
+    }
+  }
+
   buildCommentViewTop() {
     const commentTopBar = this.shadowRoot.querySelector('.commentTopBar');
+
+    const commentCountContainer = document.createElement('div');
+    commentCountContainer.classList.add('commentCountContainer');
+
+    const commentCount = document.createElement('div');
+    commentCount.classList.add('commentCount');
+    commentCount.innerHTML = `${this.commentNumber + 1}/${this.totalNumberOfComments}`; 
+    commentCountContainer.appendChild(commentCount);
+    
+    let ttsControl;
+    //if this comment has a tts file path
+    if(this.comment.ttsFilePath) {
+      //create a tts control with the file path
+      ttsControl = new TextToSpeechControl(this.comment.ttsFilePath, null, this.playbackEngine.editorProperties.ttsSpeed, true);
+      commentCountContainer.appendChild(ttsControl);
+    } else if(this.playbackEngine.playbackData.aiEnabled) { //no tts file path in this comment
+      //create a tts that will convert the text to speech
+      ttsControl = new TextToSpeechControl(null, this.comment.commentTitle + " " + this.comment.commentText, this.playbackEngine.editorProperties.ttsSpeed, true);
+      commentCountContainer.appendChild(ttsControl);
+    } //else- no tts control
+
     if (this.isDescriptionComment) {
       const titleBarDiv = document.createElement('div');
       titleBarDiv.classList.add('titleBar');
       titleBarDiv.innerHTML = this.playbackEngine.playbackData.playbackTitle;
-      commentTopBar.appendChild(titleBarDiv);
+
+      const descriptionCommentTopBar = document.createElement('div');
+      descriptionCommentTopBar.classList.add('descriptionCommentTopBar');
+      descriptionCommentTopBar.appendChild(titleBarDiv);
+      descriptionCommentTopBar.appendChild(commentCountContainer);
+
+      commentTopBar.appendChild(descriptionCommentTopBar);
     } else {
       const commentBar = document.createElement('div');
       commentBar.classList.add('commentBar');
@@ -263,12 +354,8 @@ class CommentView extends HTMLElement {
         developerGroups: this.playbackEngine.playbackData.developerGroups
       }));
 
-      const commentCount = document.createElement('div');
-      commentCount.classList.add('commentCount');
-      commentCount.innerHTML = `${this.commentNumber}/${this.totalNumberOfComments - 1}`; //subtract one for description comment
-
       commentBar.appendChild(devGroup);
-      commentBar.appendChild(commentCount);
+      commentBar.appendChild(commentCountContainer);
       commentTopBar.appendChild(commentBar);
     }
   }
@@ -303,6 +390,11 @@ class CommentView extends HTMLElement {
     }
   }
 
+  updateTTSSpeed(speed) {
+    const ttsControl = this.shadowRoot.querySelector('st-text-to-speech-control');
+    ttsControl.updateTTSSpeed(speed);
+  }
+
   revealCommentsBeforeSearch() {
     const tagView = this.shadowRoot.querySelector('st-tag-view');
     if(tagView) {
@@ -311,9 +403,15 @@ class CommentView extends HTMLElement {
     }
 
     //set the text back to the original
+    let formattedCommentText = this.comment.commentText;
+    //if the text format is markdown, convert it to html
+    if(this.comment.textFormat && this.comment.textFormat === 'markdown') {
+      const md = markdownit();
+      formattedCommentText = md.render(this.comment.commentText);
+    }
     const commentText = this.shadowRoot.querySelector('.commentText');
-    commentText.innerHTML = this.comment.commentText;
-
+    commentText.innerHTML = formattedCommentText;
+    
     const commentTitle = this.shadowRoot.querySelector('.commentTitle');
     commentTitle.innerHTML = this.comment.commentTitle;
 

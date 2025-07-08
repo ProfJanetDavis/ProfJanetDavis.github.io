@@ -1,8 +1,7 @@
 class CodeView extends HTMLElement {
-  constructor(playbackEngine, editorProperties) {
+  constructor(playbackEngine) {
     super();
 
-    this.editorProperties = editorProperties;
     this.width = window.innerWidth * .27;
     this.playbackEngine = playbackEngine;
 
@@ -68,11 +67,15 @@ class CodeView extends HTMLElement {
 
     //add the editor view
     const editorViewSlot = this.shadowRoot.querySelector('.editorViewSlot');
-    const editorView = new EditorView(this.playbackEngine, this.editorProperties);
+    const editorView = new EditorView(this.playbackEngine);
     editorViewSlot.appendChild(editorView);
 
     //add the event listeners
     this.addEventListeners();
+
+    //update for the initial display
+    this.updateForPlaybackMovement();
+    this.updateForCommentSelected();
   }
   
   addEventListeners() {
@@ -348,6 +351,23 @@ class CodeView extends HTMLElement {
     //update the editor
     const editorView = this.shadowRoot.querySelector('st-editor-view');
     editorView.updateForPlaybackMovement();
+
+    //update the url to show either the comment or event position
+    const currentUrl = new URL(window.location);
+    //if there is an active comment here
+    if(this.playbackEngine.activeComment) {
+      //get rid of the event index
+      currentUrl.searchParams.delete('event');
+      //add the comment index
+      const commentIndex = this.playbackEngine.getCommentIndex(this.playbackEngine.activeComment.id) + 1;
+      currentUrl.searchParams.set('comment', commentIndex);
+    } else { //no active comment here
+      //add the event index
+      currentUrl.searchParams.set('event', this.playbackEngine.currentEventIndex + 1);
+      //get rid of the comment index
+      currentUrl.searchParams.delete('comment');
+    }
+    window.history.replaceState({}, '', currentUrl);
   }
 
   updateForCommentReordering() {
@@ -453,6 +473,11 @@ class CodeView extends HTMLElement {
   updateForTitleChange(newTitle) {
     const playbackNavigator = this.shadowRoot.querySelector('st-playback-navigator');
     playbackNavigator.updateForTitleChange(newTitle);
+  }
+
+  updateTTSSpeed(speed) {
+    const playbackNavigator = this.shadowRoot.querySelector('st-playback-navigator');
+    playbackNavigator.updateTTSSpeed(speed);
   }
 
   addSelectedTextToComment(comment) {
@@ -672,15 +697,15 @@ class CodeView extends HTMLElement {
   }
   increaseEditorFontSize() {
     //make the font bigger
-    this.editorProperties.fontSize = this.editorProperties.fontSize + 4;
+    this.playbackEngine.editorProperties.fontSize = this.playbackEngine.editorProperties.fontSize + 4;
     //update the editor
-    this.updateEditorFontSize(this.editorProperties.fontSize);
+    this.updateEditorFontSize(this.playbackEngine.editorProperties.fontSize);
   }
   decreaseEditorFontSize() {
     //make the font smaller
-    this.editorProperties.fontSize = this.editorProperties.fontSize - 2;
+    this.playbackEngine.editorProperties.fontSize = this.playbackEngine.editorProperties.fontSize - 2;
     //update the editor
-    this.updateEditorFontSize(this.editorProperties.fontSize);
+    this.updateEditorFontSize(this.playbackEngine.editorProperties.fontSize);
   }
 
   //adjusts playback speed

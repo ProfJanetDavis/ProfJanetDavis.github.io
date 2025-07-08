@@ -1,8 +1,7 @@
 class BlogView extends HTMLElement {
-  constructor(playbackEngine, editorProperties) {
+  constructor(playbackEngine) {
     super();
 
-    this.editorProperties = editorProperties;
     this.playbackEngine = playbackEngine;
 
     this.attachShadow({ mode: 'open' });
@@ -78,7 +77,10 @@ class BlogView extends HTMLElement {
     const blogDevelopersDiv = this.shadowRoot.querySelector('.blogDevelopersDiv');
     Object.values(this.playbackEngine.playbackData.developers).forEach(dev => {
       //system and anon dev ids are 1 and 2
-      if(dev.id !== 1 && dev.id !== 2) {
+      if(dev.id !== this.playbackEngine.playbackData.anonymousDeveloperId && 
+         dev.id !== this.playbackEngine.playbackData.systemDeveloperId &&
+         dev.userName !== "Anonymous Developer" &&
+         dev.userName !== "Storyteller System") {
         blogDevelopersDiv.appendChild(new DevAvatar(dev.avatarURL, dev.userName, dev.email, true));
       }
     });
@@ -95,7 +97,7 @@ class BlogView extends HTMLElement {
       const comment = flattenedComments[i];
       
       //create the content and add it to the page
-      const blogComponent = new BlogComponent(this.playbackEngine, comment, this.editorProperties);
+      const blogComponent = new BlogComponent(this.playbackEngine, comment);
       //make each blog component identifiable by id
       blogComponent.setAttribute('id', `id-${comment.id}`);
 
