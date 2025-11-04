@@ -10,7 +10,7 @@ function loadPlaybackData(playbackData) {
     playbackData.anonymousDeveloperGroupId = "c1f9b4cd-e5a2-42e9-bf6f-56bef451366d";
     playbackData.systemDeveloperId = "16b6d0d7-16ad-41f3-a57d-b8bba6ef8284";
     playbackData.systemDeveloperGroupId = "3a816edc-5177-4ac7-9811-b8ac7b501230";
-    playbackData.playbackTitle = 'Filtering small primes';
+    playbackData.playbackTitle = 'Computing small primes';
     playbackData.branchId = 'a1741005-5a9c-45c0-afe9-cb43f0b3e75b';
     playbackData.estimatedReadTime = 9;
     playbackData.aiEnabled = false;
