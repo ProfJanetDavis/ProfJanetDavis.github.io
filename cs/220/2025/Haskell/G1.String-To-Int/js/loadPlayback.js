@@ -10,7 +10,7 @@ function loadPlaybackData(playbackData) {
     playbackData.anonymousDeveloperGroupId = "faa08c19-6be6-4083-a778-a99d52f5d6ca";
     playbackData.systemDeveloperId = "77abac11-9846-4eb9-a97c-6cb41e604a42";
     playbackData.systemDeveloperGroupId = "f3c724d5-ef81-45df-b3b9-535a65766f3b";
-    playbackData.playbackTitle = 'String to Integer';
+    playbackData.playbackTitle = 'Converting strings to integers';
     playbackData.branchId = '3ab291e2-e9e8-4559-ab4a-64358ed299d3';
     playbackData.estimatedReadTime = 7;
     playbackData.aiEnabled = false;
