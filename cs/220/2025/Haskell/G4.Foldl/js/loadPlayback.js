@@ -10,7 +10,7 @@ function loadPlaybackData(playbackData) {
     playbackData.anonymousDeveloperGroupId = "9791211a-7e07-42ab-b666-380287347c33";
     playbackData.systemDeveloperId = "a53fa23c-b813-4deb-b0dc-2cd7ce4f09f4";
     playbackData.systemDeveloperGroupId = "cc863a29-c28b-4a56-b2c1-3aaa53468718";
-    playbackData.playbackTitle = 'Reverse and strToInt with foldl';
+    playbackData.playbackTitle = 'Implementing reverse and strToInt with foldl';
     playbackData.branchId = 'ARsfICzg';
     playbackData.estimatedReadTime = 4;
     playbackData.aiEnabled = false;
